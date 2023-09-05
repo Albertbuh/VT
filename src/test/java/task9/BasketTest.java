@@ -23,7 +23,7 @@ class BasketTest {
         expected /= balls.length;
 
         Basket b = new Basket(balls);
-        assertEquals(expected, b.GetBallsWeight());
+        assertEquals(expected, b.getBallsWeight());
     }
 
     @Test
@@ -37,7 +37,7 @@ class BasketTest {
                 new Ball(3.13, "red")
         };
         Basket b = new Basket(balls);
-        assertEquals(3, b.GetBallsAmountByColor("red"));
+        assertEquals(3, b.getBallsAmountByColor("red"));
     }
 
     @Test
@@ -51,6 +51,6 @@ class BasketTest {
                 new Ball(3.13, "red")
         };
         Basket b = new Basket(balls);
-        assertEquals(1, b.GetBallsAmountByColor());
+        assertEquals(1, b.getBallsAmountByColor());
     }
 }

@@ -7,6 +7,7 @@ import java.util.Collection;
 public class Basket {
     private ArrayList<Ball> ballsList;
 
+   
     private int getBallsAmount() {
         return ballsList.size();
     }
@@ -27,7 +28,7 @@ public class Basket {
         ballsList.add(ball);
     }
 
-    public double GetBallsWeight() {
+    public double getBallsWeight() {
         if(ballsList == null)
             throw new NullPointerException("list of balls is null");
 
@@ -38,7 +39,7 @@ public class Basket {
         return totalWeight / getBallsAmount();
     }
 
-    public int GetBallsAmountByColor(String color) {
+    public int getBallsAmountByColor(String color) {
         int amount = 0;
         for(var ball: ballsList) {
             if(ball.color.equals(color))
@@ -46,7 +47,7 @@ public class Basket {
         }
         return amount;
     }
-    public int GetBallsAmountByColor() {
+    public int getBallsAmountByColor() {
         int amount = 0;
         for(var ball: ballsList) {
             if(ball.color.equals(Ball.defaultColor))
