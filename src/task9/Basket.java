@@ -7,7 +7,7 @@ import java.util.Collection;
 public class Basket {
     private ArrayList<Ball> ballsList;
 
-   
+    
     private int getBallsAmount() {
         return ballsList.size();
     }
@@ -36,7 +36,7 @@ public class Basket {
         for(var ball: ballsList) {
             totalWeight += ball.weight;
         }
-        return totalWeight / getBallsAmount();
+        return totalWeight;
     }
 
     public int getBallsAmountByColor(String color) {

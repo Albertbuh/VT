@@ -20,7 +20,6 @@ class BasketTest {
         for(var ball:balls) {
             expected += ball.weight;
         }
-        expected /= balls.length;
 
         Basket b = new Basket(balls);
         assertEquals(expected, b.getBallsWeight());
