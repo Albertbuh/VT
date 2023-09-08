@@ -6,6 +6,7 @@ public class Primes {
 
     private static ArrayList<Integer> primes = new ArrayList<Integer>(); //store indexes of prime elements, not prime elements directly
     public static void checkCollectionToPrimes(int[] arr) {
+        primes.clear();
         int length = arr.length;
         System.out.println("Indexes: ");
         for(int i=0; i<length; i++) {
