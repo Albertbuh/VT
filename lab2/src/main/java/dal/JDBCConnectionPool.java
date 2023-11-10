@@ -16,10 +16,10 @@ public class JDBCConnectionPool implements ConnectionPool {
 
     public static JDBCConnectionPool create(String url, String user, String password)
             throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
 
+        Class.forName("com.mysql.cj.jdbc.Driver");
         List<Connection> pool = new ArrayList<>(DEFAULT_POOL_SIZE);
-        for(int i = 0; i< DEFAULT_POOL_SIZE; i++) {
+        for(int i = 0; i < DEFAULT_POOL_SIZE; i++) {
             pool.add(createConnection(url, user, password));
         }
         return new JDBCConnectionPool(url, user, password, pool);

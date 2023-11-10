@@ -1,6 +1,9 @@
 package beans;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private static final long serialVersionUID = 2L;
     private String login;
     private String password;
     private String role;
@@ -35,6 +38,22 @@ public class User {
     }
     public void SetRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof User u) {
+            return this.password.equalsIgnoreCase(u.password)
+                    && this.login.equalsIgnoreCase(u.login);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return  (7 * password.hashCode()
+                + 2 * login.hashCode())
+                % Integer.MAX_VALUE;
     }
 
 }

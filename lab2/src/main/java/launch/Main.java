@@ -1,10 +1,10 @@
 package launch;
 
 import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
+import beans.Lot;
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
 import org.apache.catalina.startup.Tomcat;
@@ -38,26 +38,7 @@ public class Main {
                 additionWebInfClasses.getAbsolutePath(), "/"));
         ctx.setResources(resources);
 
-        Connection con = null;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager
-                    .getConnection("jdbc:mysql://127.0.0.1/auction",
-                            "root", "root");
-            System.out.println("jdbc connected");
-        }
-        catch (ClassNotFoundException | SQLException ex) {
-            System.out.println("Error! " + ex.toString());
-        }
-        finally {
-            try {
-                if(con != null)
-                    con.close();
-            }
-            catch(SQLException ex) {
-                System.out.println("bluat");
-            }
-        }
+
         tomcat.start();
         tomcat.getServer().await();
     }
