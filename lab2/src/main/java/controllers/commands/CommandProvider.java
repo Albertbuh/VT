@@ -17,6 +17,7 @@ public class CommandProvider {
         commandsList.put(CommandName.MAKE_REQUEST, new MakeRequestCommand());
         commandsList.put(CommandName.CHECK_REQUESTS, new CheckRequestsCommand());
         commandsList.put(CommandName.CHECK_TRADES, new CheckTradesCommand());
+        commandsList.put(CommandName.INDEX, new CheckTradesCommand());
     }
 
     public Command getCommand(String name) throws CommandException{

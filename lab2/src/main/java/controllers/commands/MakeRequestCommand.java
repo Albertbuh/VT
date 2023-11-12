@@ -36,6 +36,8 @@ public class MakeRequestCommand implements Command{
             var tradeService = ServiceFactory.getInstance().getTradeService();
             var lot = new Lot(name, descFileName, imageFileName, price);
             var tradeRequest = tradeService.makeRequest(user, lot, period);
+            CommandProvider.logger.info("REQUEST CREATED");
+
         } catch (ServiceException e) {
             CommandProvider.logger.error("MakeRequestCommand POST: {}", e.getMessage());
         }
@@ -43,8 +45,12 @@ public class MakeRequestCommand implements Command{
         return UrlDispatcher.INDEX_URL;
     }
 
+
+
     @Override
     public String executeGet(HttpServletRequest request, HttpServletResponse response) throws CommandException {
+        if(request.getSession().getAttribute("token") == null)
+            return UrlDispatcher.SIGNIN_URL;
 
         return JspDispatcher.NEW_REQUEST_PAGE;
     }

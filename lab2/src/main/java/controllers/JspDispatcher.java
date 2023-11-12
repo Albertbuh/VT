@@ -21,7 +21,7 @@ public class JspDispatcher {
     private static Map<String, String> pages = new HashMap<>() {{
         put(UrlDispatcher.LOGIN_URL, LOGIN_PAGE);
         put(UrlDispatcher.SIGNIN_URL, SIGNIN_PAGE);
-        put(UrlDispatcher.INDEX_URL, INDEX_PAGE);
+        put(UrlDispatcher.INDEX_URL, CHECKTRADES_PAGE);
         put(UrlDispatcher.NEW_REQUEST_URL, NEW_REQUEST_PAGE);
         put(UrlDispatcher.ERROR_URL, ERROR_PAGE);
         put(UrlDispatcher.CHECKREQUEST_URL, CHECKREQUEST_PAGE);

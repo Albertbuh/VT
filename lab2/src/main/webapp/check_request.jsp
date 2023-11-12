@@ -164,10 +164,10 @@
             color: #012866;
         }
     </style>
-
 </head>
 <body>
 <c:import url="header.jsp"/>
+
 
 <c:forEach var="request" items="${tradeManager.requests}">
 <div class="request-container">

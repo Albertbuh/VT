@@ -7,25 +7,24 @@
     <list default="true" id="a8570d56-737a-470a-9940-65c9085e2334" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/beans/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Trade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/JspDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/JspDispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/UrlDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/UrlDispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/MakeRequestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/MakeRequestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/check_request.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check_request.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/check_trades.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check_trades.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/beans/Trade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/beans/Trade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/beans/TradeManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/beans/TradeManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CheckRequestsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/CheckRequestsCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CommandName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/CommandName.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CommandProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/CommandProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/TradeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TradeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dao/impl/SQLTradeDAOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dao/impl/SQLTradeDAOTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/MakeRequestCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/MakeRequestCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +204,7 @@
       <workItem from="1699644810510" duration="227000" />
       <workItem from="1699645046616" duration="70000" />
       <workItem from="1699645126703" duration="2844000" />
-      <workItem from="1699788862931" duration="31401000" />
+      <workItem from="1699788862931" duration="34579000" />
     </task>
     <servers />
   </component>

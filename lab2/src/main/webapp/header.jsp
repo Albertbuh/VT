@@ -4,9 +4,10 @@
     <span>LOGO</span>
     <c:if test="${user.role == 'ADMIN'}">
         <div class="links-section">
-            <a href="#">New trade </a>
-            <a href="#">User list </a>
             <a href="check_requests">Check requests</a>
+            <a href="check_trades">Show trades</a>
+            <a href="make_request">New trade</a>
+
         </div>
     </c:if>
     <c:if test="${user.role == 'USER'}">

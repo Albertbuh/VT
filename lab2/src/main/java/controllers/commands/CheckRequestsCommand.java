@@ -28,6 +28,7 @@ public class CheckRequestsCommand implements Command{
         var service = ServiceFactory.getInstance().getTradeService();
         if(user.getRole().equals("ADMIN")) {
             try {
+                System.out.println("start accept");
                 service.processTradeRequest(id, user, isAccepted);
             } catch (ServiceException e) {
                 CommandProvider.logger.error("CheckRequestCommand POST: {}", e.getMessage());

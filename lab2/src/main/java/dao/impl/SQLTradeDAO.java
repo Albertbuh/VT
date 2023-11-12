@@ -96,11 +96,13 @@ public class SQLTradeDAO implements TradeDAO {
         return result;
     }
 
+
+
     @Override
     public void acceptRequest(int requestId, User admin) throws DAOException {
         String sqlUpdate = "UPDATE trade_requests SET `tr_status` = 'ACCEPTED' WHERE tr_id = " + requestId;
-        String sqlCreateTrade = "INSERT INTO trades (`t_request_id`, `t_admin_login`, `t_start_date`, `t_status`, `t_max_bid`)" +
-                "VALUES (?,?,?, 'IN_PROCESS', (SELECT `tr_lot_price` FROM  trade_requests WHERE `tr_id` = `t_request_id`))";
+        String sqlCreateTrade = "INSERT INTO trades (`t_request_id`, `t_admin_login`, `t_start_date`, `t_status`, `t_max_bid`, `t_max_bid_user_login`)" +
+                "VALUES (?,?,?, 'IN_PROCESS', (SELECT `tr_lot_price` FROM  trade_requests WHERE `tr_id` = `t_request_id`), null)";
         Connection con = null;
         Statement stUpdate = null;
         PreparedStatement ps = null;

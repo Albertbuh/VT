@@ -32,7 +32,7 @@ public class Trade implements Serializable {
     public void setRequestInformation(TradeRequest req) {
         this.requestInformation = req;
     }
-    
+
     public void setStatus(TradeStatus status) {
         this.status = status;
     }

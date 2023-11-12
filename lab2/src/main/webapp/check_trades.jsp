@@ -179,7 +179,7 @@
     </div>
 
     <div class="button-section">
-        <span class="date">date: ${trade.startDateTime}</span>
+        <span class="date" id="date-field">published: ${trade.startDateTime}</span>
     </div>
 </div>
 </c:forEach>

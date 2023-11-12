@@ -10,6 +10,7 @@ import java.util.List;
 
 public interface TradeDAO {
     boolean makeRequest(TradeRequest request) throws DAOException;
+//    boolean makeTrade(TradeRequest request, String adminName) throws DAOException;
     void acceptRequest(int id, User admin) throws DAOException;
     void rejectRequest(int id) throws DAOException;
     List<TradeRequest> getRequests() throws DAOException;
