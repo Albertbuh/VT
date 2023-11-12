@@ -6,11 +6,14 @@ import dao.DAOException;
 import dao.DAOFactory;
 import dao.UserDAO;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import services.ClientService;
 import services.ServiceException;
 
 public class ClientServiceImpl implements ClientService {
 
+    private final Logger logger = LoggerFactory.getLogger("ClientServiceImpl");
     private String MD5Hash(String password) {
         return DigestUtils.md5Hex(password).toUpperCase();
     }
@@ -28,8 +31,9 @@ public class ClientServiceImpl implements ClientService {
         User result = null;
         try {
             result = dao.signIn(login, password);
+            logger.info("user {} has been signed in", login);
         } catch (DAOException e) {
-            System.out.println(e.getMessage());
+            logger.error("signIn: {}", e.getMessage());
         }
         return result;
     }
@@ -53,8 +57,9 @@ public class ClientServiceImpl implements ClientService {
         boolean registered = false;
         try {
             registered = dao.registration(newUser);
+            logger.info("user {} has been registered", login);
         } catch (DAOException e) {
-            System.out.println(e.getMessage());
+            logger.error("registration: {}", e.getMessage());
         }
         return registered ? newUser : new User();
     }

@@ -37,7 +37,7 @@ public class MakeRequestCommand implements Command{
             var lot = new Lot(name, descFileName, imageFileName, price);
             var tradeRequest = tradeService.makeRequest(user, lot, period);
         } catch (ServiceException e) {
-            System.out.println(e.getMessage());
+            CommandProvider.logger.error("MakeRequestCommand POST: {}", e.getMessage());
         }
 
         return UrlDispatcher.INDEX_URL;

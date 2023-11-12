@@ -5,6 +5,8 @@ import dal.ConnectionPool;
 import dal.ConnectionPoolFactory;
 import dao.DAOException;
 import dao.TradeDAO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -15,12 +17,13 @@ import java.util.List;
 public class SQLTradeDAO implements TradeDAO {
 
     private ConnectionPool connectionPool;
+    private final Logger logger = LoggerFactory.getLogger("SQLTradeDAO");
     public SQLTradeDAO(){
         try {
             connectionPool = ConnectionPoolFactory.getMysqlPool();
         }
         catch (SQLException | ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+            logger.error("Constructor: {}", e.getMessage());
 //            throw new DAOException(e);
         }
     }
@@ -41,15 +44,14 @@ public class SQLTradeDAO implements TradeDAO {
                 id = rs.getInt(1);
             }
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            throw new DAOException("getObjectId", e);
+            logger.error("getObjectId: {}", e.getMessage());
         }
         finally {
             try {
                 if(st != null) {st.close(); }
                 if(rs != null) {rs.close(); }
             } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                logger.error("unable to clear resources in getObjectId: {}", e.getMessage());
             }
         }
 
@@ -87,7 +89,7 @@ public class SQLTradeDAO implements TradeDAO {
                 if(ps != null) {ps.close();}
                 if(con != null) {connectionPool.releaseConnection(con);}
             } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                logger.error("makeRequest: {}", e.getMessage());
                 result = false;
             }
         }
@@ -117,11 +119,11 @@ public class SQLTradeDAO implements TradeDAO {
 
             con.commit();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.error("acceptRequest: {}", e.getMessage());
             try {
                 con.rollback();
             } catch (SQLException ex) {
-                System.out.println(e.getMessage());
+                logger.error("unsuccessfull rollback: {}", e.getMessage());
             }
         }
         finally {
@@ -130,7 +132,7 @@ public class SQLTradeDAO implements TradeDAO {
                 if(stUpdate != null) { stUpdate.close();}
                 if(ps != null) {ps.close();}
             } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                logger.error("acceptRequest: {}", e.getMessage());
             }
         }
     }
@@ -145,14 +147,14 @@ public class SQLTradeDAO implements TradeDAO {
             st = con.createStatement();
             st.executeUpdate(sql);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.error("rejectRequest: {}", e.getMessage());
         }
         finally {
             try {
                 if(con != null) {connectionPool.releaseConnection(con);}
                 if(st != null) {st.close();}
             } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                logger.error("rejectRequest: {}", e.getMessage());
             }
         }
     }
@@ -191,7 +193,7 @@ public class SQLTradeDAO implements TradeDAO {
             }
         }
         catch(SQLException e) {
-            System.out.println(e.getMessage());
+            logger.error("getRequests: {}", e.getMessage());
         }
         finally {
             try {
@@ -199,7 +201,7 @@ public class SQLTradeDAO implements TradeDAO {
                 if(st != null) {st.close();}
                 if(rs != null) {rs.close();}
             } catch (SQLException e) {
-                System.out.println(e.getMessage());
+                logger.error("getRequests: {}", e.getMessage());
             }
         }
         return resultList;

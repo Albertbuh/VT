@@ -5,6 +5,8 @@ import beans.TradeRequest;
 import beans.User;
 import dao.DAOException;
 import dao.DAOFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import services.ServiceException;
 import services.TradeService;
 
@@ -13,23 +15,22 @@ import java.util.List;
 
 public class TradeServiceImpl implements TradeService {
 
-    dao.TradeDAO tradeDAO = DAOFactory.getInstance().getTradeDAO();
-
+    private final dao.TradeDAO tradeDAO = DAOFactory.getInstance().getTradeDAO();
+    private final Logger logger = LoggerFactory.getLogger("TradeServiceImpl");
     @Override
     public TradeRequest makeRequest(User user, Lot lot, int period) throws ServiceException{
-        var tradeRequest = new TradeRequest(user, lot, period);
+        TradeRequest tradeRequest = null;
 
         try {
-            if(tradeDAO.makeRequest(tradeRequest))
-                return tradeRequest;
-            else {
-                System.out.println("SOMETHING WRONG IN TRADE SERVICE");
-                return null;
+            tradeRequest = new TradeRequest(user, lot, period);
+            if(!tradeDAO.makeRequest(tradeRequest)) {
+                logger.debug("Something wrong in tradeDAO.makeRequest (return false)");
+                tradeRequest = null;
             }
         } catch (DAOException e) {
-            throw new ServiceException(e);
+            logger.error("makeRequest error: {}", e.getMessage());
         }
-
+        return tradeRequest;
     }
 
     @Override
@@ -38,6 +39,7 @@ public class TradeServiceImpl implements TradeService {
             return tradeDAO.getRequests();
         }
         catch(Exception e) {
+            logger.error("getRequests: {}", e.getMessage());
             return null;
         }
     }
@@ -52,7 +54,7 @@ public class TradeServiceImpl implements TradeService {
                 tradeDAO.rejectRequest(requestId);
             }
         } catch (DAOException e) {
-            throw new ServiceException(e);
+            logger.error("processTradeRequest: {}", e.getMessage());
         }
     }
 }

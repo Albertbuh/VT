@@ -1,5 +1,7 @@
 package services;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import services.impl.ClientServiceImpl;
 import services.impl.TokenServiceImpl;
 import services.impl.TradeServiceImpl;
@@ -9,6 +11,7 @@ public final class ServiceFactory {
     private final ClientService clientService = new ClientServiceImpl();
     private final TokenService tokenService = new TokenServiceImpl();
     private final TradeService tradeService = new TradeServiceImpl();
+
     public static ServiceFactory getInstance() {
         return factory;
     }
@@ -18,4 +21,5 @@ public final class ServiceFactory {
     }
     public TokenService getTokenService() { return tokenService; }
     public TradeService getTradeService() { return tradeService; }
+
 }

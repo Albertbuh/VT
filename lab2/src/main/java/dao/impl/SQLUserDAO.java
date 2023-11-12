@@ -7,12 +7,14 @@ import dal.JDBCConnectionPool;
 import dao.DAOException;
 import dao.UserDAO;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 
 public class SQLUserDAO implements UserDAO {
     private ConnectionPool connectionPool;
-
+    private final Logger logger = LoggerFactory.getLogger("SQLUserDAO");
     public SQLUserDAO() {
         try {
             connectionPool = ConnectionPoolFactory.getMysqlPool();
@@ -34,7 +36,7 @@ public class SQLUserDAO implements UserDAO {
             ps.executeUpdate();
         }
         catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.error("registration: {}", e.getMessage());
             return false;
         }
         finally {
@@ -43,7 +45,7 @@ public class SQLUserDAO implements UserDAO {
                 if(conn != null) { connectionPool.releaseConnection(conn); }
             }
             catch (SQLException e) {
-                System.out.println(e.getMessage());
+                logger.error("registration: {}", e.getMessage());
             }
         }
         return true;
@@ -69,7 +71,7 @@ public class SQLUserDAO implements UserDAO {
              }
         }
         catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.error("signin: {}", e.getMessage());
         }
         finally {
             try {
@@ -78,7 +80,7 @@ public class SQLUserDAO implements UserDAO {
                 if(conn != null) { connectionPool.releaseConnection(conn); }
             }
             catch (SQLException e) {
-                System.out.println(e.getMessage());
+                logger.error("signin: {}", e.getMessage());
             }
         }
 

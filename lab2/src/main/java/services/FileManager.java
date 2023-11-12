@@ -1,6 +1,8 @@
 package services;
 
 import beans.Lot;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,18 +11,19 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 public class FileManager {
+    private static final Logger logger = LoggerFactory.getLogger("FileManager");
     public static String writeFile(String fileName, String text) throws ServiceException{
         PrintWriter writer = null;
         if(!fileName.contains(".txt"))
             fileName += ".txt";
 
         try {
-//            fileName += "!" + java.util.UUID.randomUUID();
+//          fileName += "!" + java.util.UUID.randomUUID();
             writer = new PrintWriter( fileName, StandardCharsets.UTF_8);
             writer.println(text);
             System.out.println("File has been written to " + fileName);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            logger.error("writeFile: {}", e.getMessage());
         }
         finally {
             if(writer != null) {
@@ -50,13 +53,13 @@ public class FileManager {
                         fos.write(bytes);
                     }
 
-                    System.out.println("Image uploaded");
+                    logger.info("Image uploaded");
                 } catch (IOException e) {
-                    System.out.println(e.getMessage());
+                    logger.error("uploadLotImageFromRequest: {}", e.getMessage());
                 }
             }
         } catch (ServletException | IOException e) {
-            System.out.println(e.getMessage());
+            logger.error("uploadLotImageFromRequest: {}", e.getMessage());
         }
 
         return imageFileName;

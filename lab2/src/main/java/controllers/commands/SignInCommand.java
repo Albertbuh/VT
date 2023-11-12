@@ -35,7 +35,7 @@ public class SignInCommand implements Command{
                page = UrlDispatcher.INDEX_URL;
            }
        } catch (ServiceException e) {
-           System.out.println(e.getMessage());
+           CommandProvider.logger.error("SingInCommand POST: {}", e.getMessage());
        }
 
        return page;

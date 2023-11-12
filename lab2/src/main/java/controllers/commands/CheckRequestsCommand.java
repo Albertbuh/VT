@@ -30,7 +30,7 @@ public class CheckRequestsCommand implements Command{
             try {
                 service.processTradeRequest(id, user, isAccepted);
             } catch (ServiceException e) {
-                System.out.println(e.getMessage());
+                CommandProvider.logger.error("CheckRequestCommand POST: {}", e.getMessage());
             }
         }
         else
@@ -53,12 +53,9 @@ public class CheckRequestsCommand implements Command{
             List<TradeRequest> list = service.getRequests();
             var tm = new TradeManager(list);
 
-            for(var tr: tm.getRequests()) {
-                System.out.println(tr.getLot().getName());
-            }
             request.setAttribute("tradeManager", tm);
         } catch (ServiceException e) {
-            System.out.println(e.getMessage());
+            CommandProvider.logger.error("CheckRequestCommand POST: {}", e.getMessage());
         }
 
         return JspDispatcher.CHECKREQUEST_PAGE;

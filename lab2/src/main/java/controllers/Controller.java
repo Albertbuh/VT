@@ -3,7 +3,8 @@ package controllers;
 import controllers.commands.Command;
 import controllers.commands.CommandException;
 import controllers.commands.CommandProvider;
-import services.ServiceFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,6 +25,7 @@ import java.io.IOException;
 )
 public class Controller extends HttpServlet {
     private static final CommandProvider commandProvider = new CommandProvider();
+    private static final Logger logger = LoggerFactory.getLogger("Controller");
     public Controller() {}
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,10 +36,10 @@ public class Controller extends HttpServlet {
         try {
             Command command = commandProvider.getCommand(path);
             page = command.executeGet(request, response);
-            System.out.println("Page:" + page);
+            logger.info("Page: {}", page);
         }
         catch (CommandException e) {
-            System.out.println(e.getMessage());
+            logger.error("doGet: {} {}", e.getMessage(), page);
         }
 
         RequestDispatcher dispatcher = request.getRequestDispatcher(page);
@@ -58,10 +60,10 @@ public class Controller extends HttpServlet {
         try {
             Command command = commandProvider.getCommand(name);
             urlPath = command.executePost(request, response);
-            System.out.println("urlPath:" + urlPath);
+            logger.info("urlPath: {}", urlPath);
         }
         catch (CommandException e) {
-            System.out.println(e.getMessage());
+            logger.error("doPost: {}", e.getMessage());
         }
 
         response.sendRedirect(urlPath);

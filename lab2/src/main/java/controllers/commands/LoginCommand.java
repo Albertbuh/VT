@@ -34,7 +34,7 @@ public class LoginCommand implements Command{
                 page = UrlDispatcher.INDEX_URL;
             }
         } catch (ServiceException e) {
-            System.out.println(e.getMessage());
+            CommandProvider.logger.error("LoginCommand POST: {}", e.getMessage());
         }
 
         return page;
