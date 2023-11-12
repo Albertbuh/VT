@@ -9,22 +9,21 @@ import java.util.Objects;
 
 public class Trade implements Serializable {
     private TradeRequest requestInformation;
-    private  LocalDateTime startDate = LocalDateTime.now();
+    private  LocalDateTime startDateTime = LocalDateTime.now();
     private TradeStatus status;
     private BigDecimal maxBid;
     private String maxBidUserLogin;
 
     public Trade() {
         requestInformation = null;
-//        admin = new User("admin","admin","ADMIN");
         status = TradeStatus.WAITING;
     }
 
     public Trade(TradeRequest request, TradeStatus status, LocalDateTime date) {
         this.requestInformation = request;
-//        this.admin = admin;
         this.status = status;
-        this.startDate = date;
+        this.startDateTime = date;
+        this.maxBid = request.getLot().getPrice();
     }
 
     public TradeRequest getRequestInformation() {
@@ -33,15 +32,7 @@ public class Trade implements Serializable {
     public void setRequestInformation(TradeRequest req) {
         this.requestInformation = req;
     }
-
-//    public User getAdmin() {
-//        return this.admin;
-//    }
-//    public void setAdmin(User admin) {
-//        if(Objects.equals(admin.getRole(), "ADMIN"))
-//            this.admin = admin;
-//    }
-
+    
     public void setStatus(TradeStatus status) {
         this.status = status;
     }
@@ -49,11 +40,11 @@ public class Trade implements Serializable {
         return this.status;
     }
 
-    public void setStartDate(LocalDateTime date) {
-        this.startDate = date;
+    public void setStartDateTime(LocalDateTime date) {
+        this.startDateTime = date;
     }
-    public LocalDateTime getStartDate() {
-        return this.startDate;
+    public LocalDateTime getStartDateTime() {
+        return this.startDateTime;
     }
 
     public void setBid(String login, BigDecimal bid) {

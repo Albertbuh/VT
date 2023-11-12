@@ -8,6 +8,7 @@ public class UrlDispatcher {
     public static final String ERROR_URL = "error";
     public static final String NEWITEM_URL = "create_item";
     public static final String CHECKREQUEST_URL = "check_requests";
+    public static final String CHECKTRADES_URL = "check_trades";
 
     private static String previousUrl = INDEX_URL;
     public static void setPreviousUrl(String url) {

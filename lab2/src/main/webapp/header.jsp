@@ -11,7 +11,7 @@
     </c:if>
     <c:if test="${user.role == 'USER'}">
         <div class="links-section">
-            <a href="#"> Catalog</a>
+            <a href="check_trades"> Catalog</a>
             <a href="make_request">New request</a>
         </div>
     </c:if>

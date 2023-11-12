@@ -16,10 +16,12 @@ public class CommandProvider {
         commandsList.put(CommandName.LOGIN, new LoginCommand());
         commandsList.put(CommandName.MAKE_REQUEST, new MakeRequestCommand());
         commandsList.put(CommandName.CHECK_REQUESTS, new CheckRequestsCommand());
+        commandsList.put(CommandName.CHECK_TRADES, new CheckTradesCommand());
     }
 
     public Command getCommand(String name) throws CommandException{
         try {
+            logger.debug("Name of current command: {}", name);
             CommandName commandName = CommandName.valueOf(name.toUpperCase());
             return commandsList.get(commandName);
         }

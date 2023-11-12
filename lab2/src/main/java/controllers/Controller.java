@@ -35,13 +35,16 @@ public class Controller extends HttpServlet {
         String page = JspDispatcher.getPage(path);
         try {
             Command command = commandProvider.getCommand(path);
+            logger.info("Start command of {} {}", path, command);
             page = command.executeGet(request, response);
-            logger.info("Page: {}", page);
+            logger.info("Finish command of {}", path);
+
         }
         catch (CommandException e) {
             logger.error("doGet: {} {}", e.getMessage(), page);
         }
 
+        logger.info("Loaded page: {}", page);
         RequestDispatcher dispatcher = request.getRequestDispatcher(page);
         if(dispatcher != null)
             dispatcher.forward(request, response);

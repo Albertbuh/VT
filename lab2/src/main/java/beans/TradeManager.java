@@ -14,6 +14,15 @@ public class TradeManager implements Serializable {
     }
 
 
+    private List<Trade> trades = new LinkedList<>();
+    public List<Trade> getTrades() {
+        return this.trades;
+    }
+    public TradeManager setTrades(List<Trade> list) {
+
+        trades = list;
+        return this;
+    }
     public TradeManager() {}
     public TradeManager(List<TradeRequest> list) {
         this.requests = list;

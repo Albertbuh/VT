@@ -94,7 +94,7 @@ class SQLTradeDAOTest {
     void getTrades() throws DAOException {
         var tradeList = dao.getTrades();
         for(var trade: tradeList) {
-            System.out.println(trade.getRequestInformation().getLot().getName());
+            System.out.println(trade.getRequestInformation().getLot().getPrice());
         }
         assertFalse(tradeList.isEmpty());
     }
