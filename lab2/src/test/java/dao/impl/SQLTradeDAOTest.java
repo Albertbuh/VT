@@ -4,6 +4,7 @@ import beans.Lot;
 import beans.TradeRequest;
 import beans.User;
 import dal.ConnectionPoolFactory;
+import dao.DAOException;
 import dao.DAOFactory;
 import org.junit.jupiter.api.Test;
 
@@ -16,17 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SQLTradeDAOTest {
 
     SQLTradeDAO dao = (SQLTradeDAO)DAOFactory.getInstance().getTradeDAO();
-    @Test
-    void createLot() {
-        Lot lot = new Lot("test", "", "", 1000);
-        try {
-            dao.createLot(lot);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            fail();
-        }
-        assertTrue(true);
-    }
+
 
     @Test
     void getUserId() throws SQLException, ClassNotFoundException {
@@ -35,8 +26,9 @@ class SQLTradeDAOTest {
         try {
             con = ConnectionPoolFactory.getMysqlPool().getConnection();
             id = dao.getObjectId(con, "users", "u_id", "u_login", "admin");
-        }
-        finally {
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        } finally {
             if(con != null) {ConnectionPoolFactory.getMysqlPool().releaseConnection(con);}
         }
         assertEquals(1, id);
@@ -49,8 +41,9 @@ class SQLTradeDAOTest {
         try {
             con = ConnectionPoolFactory.getMysqlPool().getConnection();
             id = dao.getObjectId(con, "lots", "l_id", "l_name", "test.7e813b75-a04d-4a13-8c16-6cd6740fdbb3");
-        }
-        finally {
+        } catch (DAOException e) {
+            throw new RuntimeException(e);
+        } finally {
             if(con != null) {ConnectionPoolFactory.getMysqlPool().releaseConnection(con);}
         }
         assertEquals(3, id);
@@ -75,7 +68,7 @@ class SQLTradeDAOTest {
     }
 
     @Test
-    void getRequests() {
+    void getRequests() throws DAOException {
         var list = dao.getRequests();
         for(var tr: list) {
             System.out.println(tr.toString());
@@ -84,7 +77,7 @@ class SQLTradeDAOTest {
     }
 
     @Test
-    void acceptRequest() {
+    void acceptRequest() throws DAOException {
         final int id = 9;
         var admin  = new User("admin", "", "ADMIN");
         dao.acceptRequest(id, admin);
@@ -92,7 +85,7 @@ class SQLTradeDAOTest {
     }
 
     @Test
-    void rejectRequest() {
+    void rejectRequest() throws DAOException {
         dao.rejectRequest(9);
         assertTrue(true);
     }

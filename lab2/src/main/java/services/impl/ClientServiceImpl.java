@@ -2,10 +2,12 @@ package services.impl;
 
 import beans.User;
 import controllers.JspDispatcher;
+import dao.DAOException;
 import dao.DAOFactory;
 import dao.UserDAO;
 import org.apache.commons.codec.digest.DigestUtils;
 import services.ClientService;
+import services.ServiceException;
 
 public class ClientServiceImpl implements ClientService {
 
@@ -14,7 +16,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public User signIn(String login, String password) {
+    public User signIn(String login, String password) throws ServiceException{
         if(login.isEmpty() || password.isEmpty())
             return new User();
 
@@ -23,16 +25,22 @@ public class ClientServiceImpl implements ClientService {
 
         DAOFactory factory = DAOFactory.getInstance();
         UserDAO dao = factory.getUserDAO();
-        return dao.signIn(login, password);
+        User result = null;
+        try {
+            result = dao.signIn(login, password);
+        } catch (DAOException e) {
+            System.out.println(e.getMessage());
+        }
+        return result;
     }
 
     @Override
-    public void signOut(String login) {
+    public void signOut(String login) throws ServiceException{
 
     }
 
     @Override
-    public User registration(String login, String password) {
+    public User registration(String login, String password) throws ServiceException {
         if(login.isEmpty() || password.isEmpty())
             return new User();
 
@@ -42,9 +50,12 @@ public class ClientServiceImpl implements ClientService {
         DAOFactory factory = DAOFactory.getInstance();
         UserDAO dao = factory.getUserDAO();
         User newUser = new User(login, password, "USER");
-        if(dao.registration(newUser))
-            return newUser;
-        else
-            return new User();
+        boolean registered = false;
+        try {
+            registered = dao.registration(newUser);
+        } catch (DAOException e) {
+            System.out.println(e.getMessage());
+        }
+        return registered ? newUser : new User();
     }
 }

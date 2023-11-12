@@ -7,6 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public interface Command {
-    String executePost(HttpServletRequest request, HttpServletResponse response);
-    String executeGet(HttpServletRequest request, HttpServletResponse response);
+    String executePost(HttpServletRequest request, HttpServletResponse response) throws CommandException;
+    String executeGet(HttpServletRequest request, HttpServletResponse response) throws CommandException;
 }

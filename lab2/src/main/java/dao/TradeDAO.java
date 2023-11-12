@@ -9,9 +9,8 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface TradeDAO {
-    void createLot(Lot lot);
-    boolean makeRequest(TradeRequest request);
-    void acceptRequest(int id, User admin);
-    void rejectRequest(int id);
-    List<TradeRequest> getRequests();
+    boolean makeRequest(TradeRequest request) throws DAOException;
+    void acceptRequest(int id, User admin) throws DAOException;
+    void rejectRequest(int id) throws DAOException;
+    List<TradeRequest> getRequests() throws DAOException;
 }

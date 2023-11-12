@@ -6,28 +6,36 @@
   <component name="ChangeListManager">
     <list default="true" id="a8570d56-737a-470a-9940-65c9085e2334" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/UrlDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/UrlDispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/LoginCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/MakeRequestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/MakeRequestCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/SignInCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/SignInCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SQLUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SQLUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/TokenService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/TradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/TradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TokenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TokenServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/check_request.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check_request.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/signin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signin.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/impl/SQLUserDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/impl/SQLUserDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/impl/ClientServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/impl/ClientServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CheckRequestsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/CheckRequestsCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/TradeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/TradeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/UserDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/ClientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/ClientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/FileManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/FileManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/TokenService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TokenService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/TradeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TradeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/login_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/login_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/login_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/login_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/signin_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/signin_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/signin_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/signin_jsp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +121,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClientServiceImplTest.adminSignIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services.impl" />
+      <option name="MAIN_CLASS_NAME" value="services.impl.ClientServiceImplTest" />
+      <option name="METHOD_NAME" value="adminSignIn" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SQLTradeDAOTest.acceptRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tomcat" />
       <extension name="coverage">
@@ -124,22 +148,6 @@
       <option name="PACKAGE_NAME" value="dao.impl" />
       <option name="MAIN_CLASS_NAME" value="dao.impl.SQLTradeDAOTest" />
       <option name="METHOD_NAME" value="acceptRequest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SQLTradeDAOTest.getLotId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tomcat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="dao.impl.SQLTradeDAOTest" />
-      <option name="METHOD_NAME" value="getLotId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -180,10 +188,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ClientServiceImplTest.adminSignIn" />
         <item itemvalue="JUnit.SQLTradeDAOTest.acceptRequest" />
         <item itemvalue="JUnit.SQLTradeDAOTest.getRequests" />
         <item itemvalue="JUnit.SQLTradeDAOTest.rejectRequest" />
-        <item itemvalue="JUnit.SQLTradeDAOTest.getLotId" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +215,7 @@
       <workItem from="1699644810510" duration="227000" />
       <workItem from="1699645046616" duration="70000" />
       <workItem from="1699645126703" duration="2844000" />
-      <workItem from="1699788862931" duration="19543000" />
+      <workItem from="1699788862931" duration="23441000" />
     </task>
     <servers />
   </component>

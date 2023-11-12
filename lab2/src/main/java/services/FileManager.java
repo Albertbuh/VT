@@ -9,7 +9,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 public class FileManager {
-    public static String writeFile(String fileName, String text) {
+    public static String writeFile(String fileName, String text) throws ServiceException{
         PrintWriter writer = null;
         if(!fileName.contains(".txt"))
             fileName += ".txt";
@@ -30,7 +30,7 @@ public class FileManager {
         return new File(fileName).getName();
     }
 
-    public static String writeLotDescriptionToFile(String fileName, String text) {
+    public static String writeLotDescriptionToFile(String fileName, String text) throws ServiceException{
         return writeFile(Lot.defaultDescDir + fileName, text);
     }
 

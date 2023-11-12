@@ -3,6 +3,7 @@ package dao.impl;
 import beans.*;
 import dal.ConnectionPool;
 import dal.ConnectionPoolFactory;
+import dao.DAOException;
 import dao.TradeDAO;
 
 import java.sql.*;
@@ -14,42 +15,19 @@ import java.util.List;
 public class SQLTradeDAO implements TradeDAO {
 
     private ConnectionPool connectionPool;
-    public SQLTradeDAO() {
+    public SQLTradeDAO(){
         try {
             connectionPool = ConnectionPoolFactory.getMysqlPool();
         }
         catch (SQLException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    @Override
-    public void createLot(Lot lot) {
-        String sqlInsertLot = "INSERT INTO lots values(null,?,?,?,?)";
-        Connection con = null;
-        PreparedStatement ps = null;
-        try {
-            con = connectionPool.getConnection();
-            ps = con.prepareStatement(sqlInsertLot);
-            ps.setString(1, lot.getName());
-            ps.setString(2, lot.getDescriptionPath());
-            ps.setString(3, lot.getImageName());
-            ps.setString(4, lot.getPrice().toString());
-            ps.executeUpdate();
-        } catch (SQLException e) {
             System.out.println(e.getMessage());
-        }
-        finally {
-            try {
-                if(ps != null) {ps.close();}
-                if(con != null) {connectionPool.releaseConnection(con);}
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
+//            throw new DAOException(e);
         }
     }
 
 
-    public int getObjectId(Connection con,  String tableName, String idColumn, String nameColumn, String name) {
+
+    public int getObjectId(Connection con,  String tableName, String idColumn, String nameColumn, String name) throws DAOException{
         String sql = "SELECT " + idColumn +
                      " FROM " + tableName +
                      " WHERE " + nameColumn + " = \"" + name + "\"";
@@ -64,6 +42,7 @@ public class SQLTradeDAO implements TradeDAO {
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            throw new DAOException("getObjectId", e);
         }
         finally {
             try {
@@ -78,7 +57,7 @@ public class SQLTradeDAO implements TradeDAO {
     }
 
     @Override
-    public boolean makeRequest(TradeRequest request) {
+    public boolean makeRequest(TradeRequest request) throws DAOException{
         boolean result = true;
         String sqlInsert = "INSERT INTO " +
                 "trade_requests (`tr_user_id`, `tr_period`, `tr_filling_date`, " +
@@ -99,7 +78,7 @@ public class SQLTradeDAO implements TradeDAO {
             ps.setBigDecimal(7, request.getLot().getPrice());
 
             ps.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException | DAOException e) {
             System.out.println(e.getMessage());
             result = false;
         }
@@ -116,7 +95,7 @@ public class SQLTradeDAO implements TradeDAO {
     }
 
     @Override
-    public void acceptRequest(int requestId, User admin) {
+    public void acceptRequest(int requestId, User admin) throws DAOException {
         String sqlUpdate = "UPDATE trade_requests SET `tr_status` = 'ACCEPTED' WHERE tr_id = " + requestId;
         String sqlCreateTrade = "INSERT INTO trades (`t_request_id`, `t_admin_login`, `t_start_date`, `t_status`)" +
                 "VALUES (?,?,?, 'IN_PROCESS')";
@@ -157,7 +136,7 @@ public class SQLTradeDAO implements TradeDAO {
     }
 
     @Override
-    public void rejectRequest(int id) {
+    public void rejectRequest(int id) throws DAOException {
         String sql = "UPDATE trade_requests SET `tr_status` = 'REJECTED' WHERE tr_id = " + id;
         Connection con = null;
         Statement st = null;
@@ -178,7 +157,7 @@ public class SQLTradeDAO implements TradeDAO {
         }
     }
     @Override
-    public List<TradeRequest> getRequests() {
+    public List<TradeRequest> getRequests() throws DAOException{
         List<TradeRequest> resultList = new ArrayList<>();
         String sql = "SELECT `tr_lot_name`, `tr_lot_desc_path`, `tr_lot_img_path`, `tr_lot_price`, " +
                 "`tr_period`, `tr_filling_date`, `tr_status`, `u_login`, `tr_id` " +

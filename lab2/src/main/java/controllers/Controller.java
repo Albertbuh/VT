@@ -1,6 +1,7 @@
 package controllers;
 
 import controllers.commands.Command;
+import controllers.commands.CommandException;
 import controllers.commands.CommandProvider;
 import services.ServiceFactory;
 
@@ -35,7 +36,7 @@ public class Controller extends HttpServlet {
             page = command.executeGet(request, response);
             System.out.println("Page:" + page);
         }
-        catch (Exception e) {
+        catch (CommandException e) {
             System.out.println(e.getMessage());
         }
 
@@ -59,7 +60,7 @@ public class Controller extends HttpServlet {
             urlPath = command.executePost(request, response);
             System.out.println("urlPath:" + urlPath);
         }
-        catch (Exception e) {
+        catch (CommandException e) {
             System.out.println(e.getMessage());
         }
 

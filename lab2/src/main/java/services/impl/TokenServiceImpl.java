@@ -2,6 +2,7 @@ package services.impl;
 
 import beans.User;
 import org.apache.commons.codec.binary.Hex;
+import services.ServiceException;
 import services.TokenService;
 
 import javax.crypto.Mac;
@@ -14,7 +15,7 @@ public class TokenServiceImpl implements TokenService {
     private final String secret = "1234";
 
     @Override
-    public String create(User user) {
+    public String create(User user) throws ServiceException {
         String payload = "name: " + user.getLogin() + "pass: " + user.getPassword();
         payload = encodeBase64(payload);
         StringBuilder sb = new StringBuilder();
@@ -27,7 +28,7 @@ public class TokenServiceImpl implements TokenService {
     }
 
     @Override
-    public String getSecret(String token) {
+    public String getSecret(String token) throws ServiceException{
         String base64Secret = token.split("\\.")[2];
         return decodeBase64(base64Secret);
     }

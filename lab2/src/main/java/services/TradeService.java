@@ -9,8 +9,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface TradeService {
-    TradeRequest makeRequest(User user, Lot lot, int period);
-    List<TradeRequest> getRequests();
+    TradeRequest makeRequest(User user, Lot lot, int period) throws ServiceException;
+    List<TradeRequest> getRequests() throws ServiceException;
 
-    void processTradeRequest(int requestId, User admin, boolean accept);
+    void processTradeRequest(int requestId, User admin, boolean accept) throws ServiceException;
 }

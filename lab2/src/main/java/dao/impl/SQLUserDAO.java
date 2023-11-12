@@ -4,6 +4,7 @@ import beans.User;
 import dal.ConnectionPool;
 import dal.ConnectionPoolFactory;
 import dal.JDBCConnectionPool;
+import dao.DAOException;
 import dao.UserDAO;
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -15,15 +16,13 @@ public class SQLUserDAO implements UserDAO {
     public SQLUserDAO() {
         try {
             connectionPool = ConnectionPoolFactory.getMysqlPool();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException | ClassNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
     @Override
-    public boolean registration(User user) {
+    public boolean registration(User user) throws DAOException {
         String sqlInsertUser = "INSERT INTO users VALUES (null, ?, ?, 'USER')";
         Connection conn = null;
         PreparedStatement ps = null;
@@ -50,7 +49,7 @@ public class SQLUserDAO implements UserDAO {
         return true;
     }
     @Override
-    public User signIn(String login, String password) {
+    public User signIn(String login, String password) throws DAOException{
         String sqlGetUser = "SELECT u_login, u_password, u_role FROM users where u_login = ?";
         Connection conn = null;
         PreparedStatement ps = null;

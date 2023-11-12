@@ -1,5 +1,6 @@
 package dao.impl;
 
+import dao.DAOException;
 import dao.DAOFactory;
 import dao.UserDAO;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -22,7 +23,7 @@ class SQLUserDAOTest {
     }
 
     @Test
-    void adminSignIn()  {
+    void adminSignIn() throws DAOException {
         String login = "admin";
         String password = "admin";
         dao.signIn(login, password);

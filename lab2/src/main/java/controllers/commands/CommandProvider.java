@@ -14,10 +14,15 @@ public class CommandProvider {
         commandsList.put(CommandName.CHECK_REQUESTS, new CheckRequestsCommand());
     }
 
-    public Command getCommand(String name) {
-        CommandName commandName = CommandName.valueOf(name.toUpperCase());
-        Command command = commandsList.get(commandName);
+    public Command getCommand(String name) throws CommandException{
+        try {
+            CommandName commandName = CommandName.valueOf(name.toUpperCase());
+            Command command = commandsList.get(commandName);
+            return command;
+        }
+        catch (Exception e) {
+            throw new CommandException(e);
+        }
 
-        return command;
     }
 }
