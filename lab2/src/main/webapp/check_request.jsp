@@ -1,6 +1,7 @@
 <jsp:useBean id="tradeManager" scope="request" class="beans.TradeManager"/>
-<%@ page import="controllers.UrlDispatcher" %>
+<%@ page import="beans.TradeStatus" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <html>
 <head>
@@ -73,39 +74,130 @@
             opacity: 0.5;
             text-decoration: underline;
         }
+
+        .request-container {
+            display: grid;
+            grid-template-columns: 150px 1fr 200px;
+            align-items: center;
+            margin: 20px;
+            height: 150px;
+            position: relative;
+            padding: 5px;
+        }
+        .request-container:hover {
+            border: 2px #012866 solid;
+        }
+        .request-container p,
+        .request-container span,
+        .request-container h2{
+            padding: 0;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        .request-container img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .request-container .desc-section {
+            padding-left: 20px;
+            height: 100%;
+            vertical-align:top;
+            position: relative;
+        }
+
+        .request-container .desc-section a {
+            text-decoration: none;
+            color: black;
+        }
+        .request-container .desc-section a:hover {
+            text-decoration: underline;
+        }
+
+        .request-container .desc-section .by-user {
+            color: gray;
+        }
+        .request-container .desc-section p {
+            font-size: 0.8em;
+        }
+        .request-container .desc-section .price {
+            position: absolute;
+            bottom: 5%;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .request-container .button-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .request-container .button-section button {
+            width: 30%;
+            background-color: #012866;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: opacity .15s;
+        }
+        .request-container .button-section button:hover {
+            opacity:50%;
+        }
+        .request-container .button-section button:active {
+            opacity:90%;
+        }
+        .request-container .button-section .date {
+            position: absolute;
+            top: 1vh;
+            right: 1vh;
+            font-size: 0.6em;
+            color: gray;
+        }
+
+
+
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 <c:import url="header.jsp"/>
-<script>
-    $(document).ready(function () {
-        // Function to send the POST request
-        function sendPostRequest(url, data) {
-            $.ajax({
-                type: 'POST',
-                url: url,
-                success: function (response) {
-                    console.log('POST request sent successfully.');
-                    // Handle the response here
-                },
-                error: function (xhr, status, error) {
-                    console.error('Error sending POST request: ' + error);
-                }
-            });
-        }
-
-        // Send the POST request when the page is loaded
-        sendPostRequest('<%= UrlDispatcher.CHECKREQUEST_URL%>');
-    });
-</script>
 
 
 <c:forEach var="request" items="${tradeManager.requests}">
-<p>${request.period}</p>
+<div class="request-container">
+    <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+    <div class="desc-section">
+        <span class="by-user">by: ${request.user.login}</span>
+        <h2><a href="#">${request.lot.name}</a></h2>
+        <p>${request.lot.descriptionPath}</p>
+        <span class="price">
+            <fmt:formatNumber type="number" maxFractionDigits="2" value="${request.lot.price}"/> BYN
+        </span>
+    </div>
+    <div class="button-section">
+        <c:choose>
+            <c:when test="${request.status.equals(TradeStatus.WAITING)}">
+                <button>Accept</button>
+                <button>Reject</button>
+            </c:when>
+            <c:when test="${request.status.equals(TradeStatus.ACCEPTED)}">
+                <button>Reject</button>
+            </c:when>
+            <c:when test="${request.status.equals(TradeStatus.REJECTED)}">
+                <button>Accept</button>
+            </c:when>
+            <c:otherwise><h3>Request in process</h3></c:otherwise>
+        </c:choose>
+
+        <span class="date">date: ${request.fillingDate}</span>
+    </div>
+</div>
 </c:forEach>
-<p>SIZE: ${tradeManager.requests.size()}</p>
 
 
 </html>

@@ -5,41 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8570d56-737a-470a-9940-65c9085e2334" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_16_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jstl_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_16_01.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/jstl_1_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_01.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Trade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/JspDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/JspDispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/UrlDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/UrlDispatcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/launch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/launch/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/TradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/TradeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/create_item.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/check_request.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check_request.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/launch/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/launch/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CheckRequestsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/CheckRequestsCommand.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/error_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/error_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/login_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/login_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/login_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/login_jsp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +59,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "jakarta",
+    "git-widget-placeholder": "admin",
     "last_opened_file_path": "D:/Univer/vt/labs/lab2/src/main/webapp/WEB-INF/lib/jstl-1.2.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -219,7 +199,7 @@
       <workItem from="1699644810510" duration="227000" />
       <workItem from="1699645046616" duration="70000" />
       <workItem from="1699645126703" duration="2844000" />
-      <workItem from="1699788862931" duration="6301000" />
+      <workItem from="1699788862931" duration="10251000" />
     </task>
     <servers />
   </component>
