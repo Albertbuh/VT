@@ -7,6 +7,7 @@ import dao.TradeDAO;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -115,15 +116,74 @@ public class SQLTradeDAO implements TradeDAO {
     }
 
     @Override
-    public Trade acceptRequest(int id) {
-        return null;
+    public void acceptRequest(TradeRequest request, User admin) {
+        String sqlUpdate = "UPDATE trade_requests SET `tr_status` = 'ACCEPTED' WHERE tr_id = " + request.getId();
+        String sqlCreateTrade = "INSERT INTO trades (`t_request_id`, `t_admin_login`, `t_start_date`, `t_status`)" +
+                "VALUES (?,?,?, 'IN_PROCESS')";
+        Connection con = null;
+        Statement stUpdate = null;
+        PreparedStatement ps = null;
+        Trade newTrade = null;
+        try {
+            newTrade = new Trade(request, admin, TradeStatus.IN_PROCESS, LocalDateTime.now());
+            con = connectionPool.getConnection();
+            con.setAutoCommit(false);
+
+            stUpdate = con.createStatement();
+            stUpdate.executeUpdate(sqlUpdate);
+
+            ps = con.prepareStatement(sqlCreateTrade);
+            ps.setInt(1,newTrade.getRequestInformation().getId());
+            ps.setString(2, newTrade.getAdmin().getLogin());
+            ps.setTimestamp(3, Timestamp.valueOf(newTrade.getStartDate()));
+            ps.executeUpdate();
+
+            con.commit();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            try {
+                con.rollback();
+            } catch (SQLException ex) {
+                System.out.println(e.getMessage());
+            }
+        }
+        finally {
+            try {
+                if(con != null) {connectionPool.releaseConnection(con); }
+                if(stUpdate != null) { stUpdate.close();}
+                if(ps != null) {ps.close();}
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
+    @Override
+    public void rejectRequest(int id) {
+        String sql = "UPDATE trade_requests SET `tr_status` = 'REJECTED' WHERE tr_id = " + id;
+        Connection con = null;
+        Statement st = null;
+        try {
+            con = connectionPool.getConnection();
+            st = con.createStatement();
+            st.executeUpdate(sql);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        finally {
+            try {
+                if(con != null) {connectionPool.releaseConnection(con);}
+                if(st != null) {st.close();}
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
     @Override
     public List<TradeRequest> getRequests() {
         List<TradeRequest> resultList = new ArrayList<>();
         String sql = "SELECT `tr_lot_name`, `tr_lot_desc_path`, `tr_lot_img_path`, `tr_lot_price`, " +
-                "`tr_period`, `tr_filling_date`, `tr_status`, `u_login` " +
+                "`tr_period`, `tr_filling_date`, `tr_status`, `u_login`, `tr_id` " +
                 "FROM trade_requests " +
                 "LEFT JOIN users on `u_id` = `tr_user_id`";
         Connection con = null;
@@ -142,10 +202,11 @@ public class SQLTradeDAO implements TradeDAO {
                 LocalDate date = rs.getDate(6).toLocalDate();
                 TradeStatus status = TradeStatus.valueOf(rs.getString(7));
                 String userLogin = rs.getString(8);
+                int id = rs.getInt(9);
 
                 Lot l = new Lot(lotName, lotDesc, lotImg, lotPrice);
                 User u = new User(userLogin, "", "");
-                TradeRequest tr = new TradeRequest(u, l, tradePeriod);
+                TradeRequest tr = new TradeRequest(id, u, l, tradePeriod);
                 tr.setFillingDate(date);
                 tr.setStatus(status);
 

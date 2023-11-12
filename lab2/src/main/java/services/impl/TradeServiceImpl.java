@@ -35,4 +35,14 @@ public class TradeServiceImpl implements TradeService {
             return null;
         }
     }
+
+    @Override
+    public void processTradeRequest(TradeRequest request, User admin, boolean accept) {
+        if(accept) {
+            tradeDAO.acceptRequest(request, admin);
+        }
+        else {
+            tradeDAO.rejectRequest(request.getId());
+        }
+    }
 }

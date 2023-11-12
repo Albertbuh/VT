@@ -50,7 +50,7 @@ public class Controller extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         request.setCharacterEncoding("utf-8");
         String name = request.getRequestURI().substring(1);
         String urlPath = UrlDispatcher.ERROR_URL;

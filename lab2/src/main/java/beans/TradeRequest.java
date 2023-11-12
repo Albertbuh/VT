@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 public class TradeRequest implements Serializable {
+    private int id = 0;
     private LocalDate fillingDate = LocalDate.now();
     private User user;
     private Lot lot;
@@ -16,10 +17,18 @@ public class TradeRequest implements Serializable {
         lot = new Lot();
         period = 10;
     }
+    public TradeRequest(int id) {
+        this.id = id;
+    }
     public TradeRequest(User user, Lot lot, int period) {
         this.user = user;
         this.lot = lot;
         this.period = period;
+    }
+
+    public TradeRequest(int id, User user, Lot lot, int period) {
+        this(user, lot, period);
+        this.id = id;
     }
 
     public void setUser(User user) {
@@ -52,6 +61,10 @@ public class TradeRequest implements Serializable {
     }
     public void setStatus(TradeStatus status) {
         this.status = status;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     @Override

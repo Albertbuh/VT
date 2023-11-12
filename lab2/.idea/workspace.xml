@@ -6,14 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="a8570d56-737a-470a-9940-65c9085e2334" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/LoginCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/LoginCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/MakeRequestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/MakeRequestCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/SignInCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/SignInCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/TradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/TradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/beans/TradeRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/beans/TradeRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CheckRequestsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/CheckRequestsCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/TradeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/TradeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,28 +47,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "admin",
-    "last_opened_file_path": "D:/Univer/vt/labs/lab2/src/main/webapp/WEB-INF/lib/jstl-1.2.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.31149426",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;admin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Univer/vt/labs/lab2/src/main/webapp/WEB-INF/lib/jstl-1.2.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.31149426&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -85,7 +87,7 @@
       <command value="jakarta" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.SQLTradeDAOTest.getRequests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="launch.Main" />
       <module name="tomcat" />
@@ -95,6 +97,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLTradeDAOTest.acceptRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao.impl" />
+      <option name="MAIN_CLASS_NAME" value="dao.impl.SQLTradeDAOTest" />
+      <option name="METHOD_NAME" value="acceptRequest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,7 +149,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQLTradeDAOTest.getUserId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SQLTradeDAOTest.rejectRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tomcat" />
       <extension name="coverage">
         <pattern>
@@ -141,23 +159,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="dao.impl" />
       <option name="MAIN_CLASS_NAME" value="dao.impl.SQLTradeDAOTest" />
-      <option name="METHOD_NAME" value="getUserId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SQLTradeDAOTest.makeRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tomcat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="dao.impl.SQLTradeDAOTest" />
-      <option name="METHOD_NAME" value="makeRequest" />
+      <option name="METHOD_NAME" value="rejectRequest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,11 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SQLTradeDAOTest.getRequests" />
+        <item itemvalue="JUnit.SQLTradeDAOTest.acceptRequest" />
+        <item itemvalue="JUnit.SQLTradeDAOTest.rejectRequest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SQLTradeDAOTest.getLotId" />
-        <item itemvalue="JUnit.SQLTradeDAOTest.makeRequest" />
-        <item itemvalue="JUnit.SQLTradeDAOTest.getUserId" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +195,7 @@
       <workItem from="1699644810510" duration="227000" />
       <workItem from="1699645046616" duration="70000" />
       <workItem from="1699645126703" duration="2844000" />
-      <workItem from="1699788862931" duration="10858000" />
+      <workItem from="1699788862931" duration="15726000" />
     </task>
     <servers />
   </component>

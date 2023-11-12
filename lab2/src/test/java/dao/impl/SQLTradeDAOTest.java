@@ -82,4 +82,18 @@ class SQLTradeDAOTest {
         }
         assertFalse(list.isEmpty());
     }
+
+    @Test
+    void acceptRequest() {
+        var request = new TradeRequest(9);
+        var admin  = new User("admin", "", "ADMIN");
+        dao.acceptRequest(request, admin);
+        assertTrue(true);
+    }
+
+    @Test
+    void rejectRequest() {
+        dao.rejectRequest(9);
+        assertTrue(true);
+    }
 }
