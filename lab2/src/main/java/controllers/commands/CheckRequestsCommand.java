@@ -14,7 +14,27 @@ import java.util.Objects;
 
 public class CheckRequestsCommand implements Command{
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String executePost(HttpServletRequest request, HttpServletResponse response) {
+//        response.setCharacterEncoding("utf-8");
+//        if(request.getSession().getAttribute("user") instanceof User u) {
+//            if(!u.getRole().equals("ADMIN"))
+//                return JspDispatcher.SIGNIN_PAGE;
+//        }
+//
+//        var service = ServiceFactory.getInstance().getTradeService();
+//        List<TradeRequest> list = service.getRequests();
+//        var tm = new TradeManager(list);
+//
+//        for(var tr: tm.getRequests()) {
+//            System.out.println(tr.getLot().getName());
+//        }
+//        request.setAttribute("tradeManager", tm);
+
+        return UrlDispatcher.CHECKREQUEST_URL;
+    }
+
+    @Override
+    public String executeGet(HttpServletRequest request, HttpServletResponse response) {
         response.setCharacterEncoding("utf-8");
         if(request.getSession().getAttribute("user") instanceof User u) {
             if(!u.getRole().equals("ADMIN"))
@@ -30,6 +50,6 @@ public class CheckRequestsCommand implements Command{
         }
         request.setAttribute("tradeManager", tm);
 
-        return UrlDispatcher.CHECKREQUEST_URL;
+        return JspDispatcher.CHECKREQUEST_PAGE;
     }
 }

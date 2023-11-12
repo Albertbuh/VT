@@ -29,14 +29,23 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         String path = request.getRequestURI().substring(1);
-        if(path.equals(UrlDispatcher.CHECKREQUEST_URL))
-            commandProvider.getCommand(path).execute(request, response);
+        String page = JspDispatcher.getPage(path);
+        try {
+            Command command = commandProvider.getCommand(path);
+            page = command.executeGet(request, response);
+            System.out.println("Page:" + page);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher(JspDispatcher.getPage(path));
+        RequestDispatcher dispatcher = request.getRequestDispatcher(page);
         if(dispatcher != null)
             dispatcher.forward(request, response);
-        else
-            sendErrorMessage(response, "dispatcher error");
+        else {
+            response.setContentType("text/html");
+            response.getWriter().println("dispatcher error");
+        }
     }
 
     @Override
@@ -44,10 +53,10 @@ public class Controller extends HttpServlet {
             throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         String name = request.getRequestURI().substring(1);
-        String urlPath = "/error";
+        String urlPath = UrlDispatcher.ERROR_URL;
         try {
             Command command = commandProvider.getCommand(name);
-            urlPath = command.execute(request, response);
+            urlPath = command.executePost(request, response);
             System.out.println("urlPath:" + urlPath);
         }
         catch (Exception e) {
@@ -55,12 +64,6 @@ public class Controller extends HttpServlet {
         }
 
         response.sendRedirect(urlPath);
-    }
-
-    private void sendErrorMessage(HttpServletResponse response, String message)
-            throws IOException {
-        response.setContentType("text/html");
-        response.getWriter().println(message);
     }
 
 }

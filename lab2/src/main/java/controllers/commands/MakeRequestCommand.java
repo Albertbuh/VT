@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 
 public class MakeRequestCommand implements Command{
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String executePost(HttpServletRequest request, HttpServletResponse response) {
         User user = (User)request.getSession().getAttribute("user");
         if(request.getSession().getAttribute("token") == null)
             return UrlDispatcher.SIGNIN_URL;
@@ -36,6 +36,12 @@ public class MakeRequestCommand implements Command{
         var tradeRequest = tradeService.makeRequest(user, lot, period);
 
         return UrlDispatcher.INDEX_URL;
+    }
+
+    @Override
+    public String executeGet(HttpServletRequest request, HttpServletResponse response) {
+
+        return JspDispatcher.NEW_REQUEST_PAGE;
     }
 
 

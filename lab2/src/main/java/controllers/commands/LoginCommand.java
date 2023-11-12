@@ -14,7 +14,7 @@ public class LoginCommand implements Command{
     private static final User incorrectUser = new User();
     private static final ServiceFactory serviceFactory = ServiceFactory.getInstance();
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String executePost(HttpServletRequest request, HttpServletResponse response) {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
 
@@ -32,6 +32,11 @@ public class LoginCommand implements Command{
             page = UrlDispatcher.INDEX_URL;
         }
         return page;
+    }
+
+    @Override
+    public String executeGet(HttpServletRequest request, HttpServletResponse response) {
+        return JspDispatcher.LOGIN_PAGE;
     }
 
 }
