@@ -80,7 +80,7 @@ class SQLTradeDAOTest {
     void acceptRequest() throws DAOException {
         final int id = 9;
         var admin  = new User("admin", "", "ADMIN");
-        dao.acceptRequest(id, admin);
+        dao.acceptRequest(id,   admin);
         assertTrue(true);
     }
 
@@ -88,5 +88,14 @@ class SQLTradeDAOTest {
     void rejectRequest() throws DAOException {
         dao.rejectRequest(9);
         assertTrue(true);
+    }
+
+    @Test
+    void getTrades() throws DAOException {
+        var tradeList = dao.getTrades();
+        for(var trade: tradeList) {
+            System.out.println(trade.getRequestInformation().getLot().getName());
+        }
+        assertFalse(tradeList.isEmpty());
     }
 }

@@ -1,6 +1,7 @@
 package services.impl;
 
 import beans.Lot;
+import beans.Trade;
 import beans.TradeRequest;
 import beans.User;
 import dao.DAOException;
@@ -55,6 +56,17 @@ public class TradeServiceImpl implements TradeService {
             }
         } catch (DAOException e) {
             logger.error("processTradeRequest: {}", e.getMessage());
+        }
+    }
+
+    @Override
+    public List<Trade> getTrades() throws ServiceException {
+        try {
+            return tradeDAO.getTrades();
+        }
+        catch(Exception e) {
+            logger.error("getRequests: {}", e.getMessage());
+            return null;
         }
     }
 }

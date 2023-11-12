@@ -99,8 +99,8 @@ public class SQLTradeDAO implements TradeDAO {
     @Override
     public void acceptRequest(int requestId, User admin) throws DAOException {
         String sqlUpdate = "UPDATE trade_requests SET `tr_status` = 'ACCEPTED' WHERE tr_id = " + requestId;
-        String sqlCreateTrade = "INSERT INTO trades (`t_request_id`, `t_admin_login`, `t_start_date`, `t_status`)" +
-                "VALUES (?,?,?, 'IN_PROCESS')";
+        String sqlCreateTrade = "INSERT INTO trades (`t_request_id`, `t_admin_login`, `t_start_date`, `t_status`, `t_max_bid`)" +
+                "VALUES (?,?,?, 'IN_PROCESS', (SELECT `tr_lot_price` FROM  trade_requests WHERE `tr_id` = `t_request_id`))";
         Connection con = null;
         Statement stUpdate = null;
         PreparedStatement ps = null;
@@ -205,5 +205,49 @@ public class SQLTradeDAO implements TradeDAO {
             }
         }
         return resultList;
+    }
+
+    @Override
+    public List<Trade> getTrades() throws DAOException {
+        List<Trade> tradeList = new ArrayList<>();
+        String sql = "SELECT `tr_lot_name`, `tr_lot_desc_path`, `tr_lot_img_path`, " +
+                        "`t_max_bid`, `tr_period`, `t_status`, `t_start_date` " +
+                        "FROM trades LEFT JOIN trade_requests ON `t_request_id` = `tr_id`";
+        Connection con = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            con = connectionPool.getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+
+            while(rs.next()) {
+                String lotName = rs.getString(1);
+                String lotDescPath = rs.getString(2);
+                String lotImgPath = rs.getString(3);
+                double lotMaxBid = rs.getDouble(4);
+                int period = rs.getInt(5);
+                TradeStatus status = TradeStatus.valueOf(rs.getString(6));
+                LocalDateTime startDate = rs.getTimestamp(7).toLocalDateTime();
+                TradeRequest mockRequest = new TradeRequest(new User(), new Lot(lotName, lotDescPath, lotImgPath, lotMaxBid), period);
+                Trade trade = new Trade(mockRequest, status, startDate);
+
+                tradeList.add(trade);
+            }
+        }
+        catch (SQLException e) {
+            logger.error("getTrades: {}", e.getMessage());
+        }
+        finally {
+            try {
+                if(con != null) { connectionPool.releaseConnection(con); }
+                if(st != null) {st.close();}
+                if(rs != null) {rs.close();}
+            } catch (SQLException e) {
+                logger.error("getTrades: {}", e.getMessage());
+            }
+        }
+
+        return tradeList;
     }
 }

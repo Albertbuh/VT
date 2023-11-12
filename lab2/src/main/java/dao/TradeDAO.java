@@ -13,4 +13,5 @@ public interface TradeDAO {
     void acceptRequest(int id, User admin) throws DAOException;
     void rejectRequest(int id) throws DAOException;
     List<TradeRequest> getRequests() throws DAOException;
+    List<Trade> getTrades() throws DAOException;
 }

@@ -13,4 +13,5 @@ public interface TradeService {
     List<TradeRequest> getRequests() throws ServiceException;
 
     void processTradeRequest(int requestId, User admin, boolean accept) throws ServiceException;
+    List<Trade> getTrades() throws  ServiceException;
 }
