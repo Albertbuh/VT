@@ -85,9 +85,9 @@ class SQLTradeDAOTest {
 
     @Test
     void acceptRequest() {
-        var request = new TradeRequest(9);
+        final int id = 9;
         var admin  = new User("admin", "", "ADMIN");
-        dao.acceptRequest(request, admin);
+        dao.acceptRequest(id, admin);
         assertTrue(true);
     }
 

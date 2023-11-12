@@ -23,7 +23,7 @@ public class SignInCommand implements Command{
         User user = service.signIn(login, password);
         String page = UrlDispatcher.ERROR_URL;
         if(user.equals(incorrectUser)) {
-            page = UrlDispatcher.SIGNIN_URL;//JspDispatcher.SIGNIN_PAGE;
+            page = UrlDispatcher.SIGNIN_URL;
         }
         else {
             request.getSession().setAttribute("user", user);
@@ -37,7 +37,7 @@ public class SignInCommand implements Command{
 
     @Override
     public String executeGet(HttpServletRequest request, HttpServletResponse response) {
-        return JspDispatcher.LOGIN_PAGE;
+        return JspDispatcher.SIGNIN_PAGE;
     }
 
 

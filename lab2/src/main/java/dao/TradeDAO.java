@@ -11,7 +11,7 @@ import java.util.List;
 public interface TradeDAO {
     void createLot(Lot lot);
     boolean makeRequest(TradeRequest request);
-    void acceptRequest(TradeRequest request, User admin);
+    void acceptRequest(int id, User admin);
     void rejectRequest(int id);
     List<TradeRequest> getRequests();
 }

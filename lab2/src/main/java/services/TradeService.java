@@ -12,5 +12,5 @@ public interface TradeService {
     TradeRequest makeRequest(User user, Lot lot, int period);
     List<TradeRequest> getRequests();
 
-    void processTradeRequest(TradeRequest request, User admin, boolean accept);
+    void processTradeRequest(int requestId, User admin, boolean accept);
 }

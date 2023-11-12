@@ -116,16 +116,14 @@ public class SQLTradeDAO implements TradeDAO {
     }
 
     @Override
-    public void acceptRequest(TradeRequest request, User admin) {
-        String sqlUpdate = "UPDATE trade_requests SET `tr_status` = 'ACCEPTED' WHERE tr_id = " + request.getId();
+    public void acceptRequest(int requestId, User admin) {
+        String sqlUpdate = "UPDATE trade_requests SET `tr_status` = 'ACCEPTED' WHERE tr_id = " + requestId;
         String sqlCreateTrade = "INSERT INTO trades (`t_request_id`, `t_admin_login`, `t_start_date`, `t_status`)" +
                 "VALUES (?,?,?, 'IN_PROCESS')";
         Connection con = null;
         Statement stUpdate = null;
         PreparedStatement ps = null;
-        Trade newTrade = null;
         try {
-            newTrade = new Trade(request, admin, TradeStatus.IN_PROCESS, LocalDateTime.now());
             con = connectionPool.getConnection();
             con.setAutoCommit(false);
 
@@ -133,9 +131,9 @@ public class SQLTradeDAO implements TradeDAO {
             stUpdate.executeUpdate(sqlUpdate);
 
             ps = con.prepareStatement(sqlCreateTrade);
-            ps.setInt(1,newTrade.getRequestInformation().getId());
-            ps.setString(2, newTrade.getAdmin().getLogin());
-            ps.setTimestamp(3, Timestamp.valueOf(newTrade.getStartDate()));
+            ps.setInt(1,requestId);
+            ps.setString(2, admin.getLogin());
+            ps.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
             ps.executeUpdate();
 
             con.commit();

@@ -1,3 +1,4 @@
+<%@ page import="controllers.UrlDispatcher" %>
 <html>
 <head>
     <title>authentication</title>
@@ -62,9 +63,9 @@
     </style>
 </head>
 <body>
-<form method="post">
+<form method="post" action="<%=UrlDispatcher.SIGNIN_URL%>">
     <h2> Sign In </h2>
-    <div class="field"><label>Login:</label><input name="login" autofocus/></div>
+    <div class="field"><label>Username:</label><input name="login" autofocus/></div>
     <div class="field"><label>Password:</label> <input type="password" name="password"/></div>
 
     <input type="submit" value="Send"/>

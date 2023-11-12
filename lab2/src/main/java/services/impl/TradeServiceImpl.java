@@ -37,12 +37,12 @@ public class TradeServiceImpl implements TradeService {
     }
 
     @Override
-    public void processTradeRequest(TradeRequest request, User admin, boolean accept) {
+    public void processTradeRequest(int requestId, User admin, boolean accept) {
         if(accept) {
-            tradeDAO.acceptRequest(request, admin);
+            tradeDAO.acceptRequest(requestId, admin);
         }
         else {
-            tradeDAO.rejectRequest(request.getId());
+            tradeDAO.rejectRequest(requestId);
         }
     }
 }

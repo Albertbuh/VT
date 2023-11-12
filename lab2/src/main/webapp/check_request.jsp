@@ -1,5 +1,6 @@
 <jsp:useBean id="tradeManager" scope="request" class="beans.TradeManager"/>
 <%@ page import="beans.TradeStatus" %>
+<%@ page import="controllers.UrlDispatcher" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -117,7 +118,7 @@
         }
 
         .request-container .desc-section .by-user {
-            color: gray;
+            color: #808080;
         }
         .request-container .desc-section p {
             font-size: 0.8em;
@@ -129,7 +130,7 @@
             font-size: 1.5em;
         }
 
-        .request-container .button-section {
+        .request-container .button-section form{
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -156,17 +157,17 @@
             top: 1vh;
             right: 1vh;
             font-size: 0.6em;
-            color: gray;
+            color: #808080;
         }
 
-
-
+        .request-container h1 {
+            color: #012866;
+        }
     </style>
 
 </head>
 <body>
 <c:import url="header.jsp"/>
-
 
 <c:forEach var="request" items="${tradeManager.requests}">
 <div class="request-container">
@@ -179,17 +180,22 @@
             <fmt:formatNumber type="number" maxFractionDigits="2" value="${request.lot.price}"/> BYN
         </span>
     </div>
+
     <div class="button-section">
         <c:choose>
             <c:when test="${request.status.equals(TradeStatus.WAITING)}">
-                <button>Accept</button>
-                <button>Reject</button>
+                <form method="post" action="<%=UrlDispatcher.CHECKREQUEST_URL%>">
+                    <input type="number" value="${request.id}" name="requestId" hidden>
+                    <input type="checkbox" name="accepted" id="checkbox${request.id}" checked hidden>
+                    <button type="submit">Accept</button>
+                    <button type="submit" onclick="document.getElementById('checkbox${request.id}').checked = false">Reject</button>
+                </form>
             </c:when>
             <c:when test="${request.status.equals(TradeStatus.ACCEPTED)}">
-                <button>Reject</button>
+                <h1>Accepted</h1>
             </c:when>
             <c:when test="${request.status.equals(TradeStatus.REJECTED)}">
-                <button>Accept</button>
+                <h1>Rejected</h1>
             </c:when>
             <c:otherwise><h3>Request in process</h3></c:otherwise>
         </c:choose>
