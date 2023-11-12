@@ -28,12 +28,14 @@ public class Controller extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String path = request.getRequestURI().substring(1);
-
+        if(path.equals(UrlDispatcher.CHECKREQUEST_URL))
+            commandProvider.getCommand(path).execute(request, response);
+        
         RequestDispatcher dispatcher = request.getRequestDispatcher(JspDispatcher.getPage(path));
         if(dispatcher != null)
             dispatcher.forward(request, response);
         else
-            sendErrorMessage(response, "dispatcher error in authentication");
+            sendErrorMessage(response, "dispatcher error");
     }
 
     @Override

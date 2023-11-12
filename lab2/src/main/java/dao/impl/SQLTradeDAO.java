@@ -1,13 +1,14 @@
 package dao.impl;
 
-import beans.Lot;
-import beans.Trade;
-import beans.TradeRequest;
+import beans.*;
 import dal.ConnectionPool;
 import dal.ConnectionPoolFactory;
 import dao.TradeDAO;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQLTradeDAO implements TradeDAO {
 
@@ -116,5 +117,53 @@ public class SQLTradeDAO implements TradeDAO {
     @Override
     public Trade acceptRequest(int id) {
         return null;
+    }
+
+    @Override
+    public List<TradeRequest> getRequests() {
+        List<TradeRequest> resultList = new ArrayList<>();
+        String sql = "SELECT `tr_lot_name`, `tr_lot_desc_path`, `tr_lot_img_path`, `tr_lot_price`, " +
+                "`tr_period`, `tr_filling_date`, `tr_status`, `u_login` " +
+                "FROM trade_requests " +
+                "LEFT JOIN users on `u_id` = `tr_user_id`";
+        Connection con = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            con = connectionPool.getConnection();
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next()) {
+                String lotName = rs.getString(1);
+                String lotDesc = rs.getString(2);
+                String lotImg = rs.getString(3);
+                double lotPrice = rs.getDouble(4);
+                int tradePeriod = rs.getInt(5);
+                LocalDate date = rs.getDate(6).toLocalDate();
+                TradeStatus status = TradeStatus.valueOf(rs.getString(7));
+                String userLogin = rs.getString(8);
+
+                Lot l = new Lot(lotName, lotDesc, lotImg, lotPrice);
+                User u = new User(userLogin, "", "");
+                TradeRequest tr = new TradeRequest(u, l, tradePeriod);
+                tr.setFillingDate(date);
+                tr.setStatus(status);
+
+                resultList.add(tr);
+            }
+        }
+        catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        finally {
+            try {
+                if(con != null) { connectionPool.releaseConnection(con);}
+                if(st != null) {st.close();}
+                if(rs != null) {rs.close();}
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return resultList;
     }
 }

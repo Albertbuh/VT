@@ -73,4 +73,13 @@ class SQLTradeDAOTest {
 
         assertTrue(result);
     }
+
+    @Test
+    void getRequests() {
+        var list = dao.getRequests();
+        for(var tr: list) {
+            System.out.println(tr.toString());
+        }
+        assertFalse(list.isEmpty());
+    }
 }

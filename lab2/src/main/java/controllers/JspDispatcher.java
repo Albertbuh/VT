@@ -15,6 +15,7 @@ public class JspDispatcher {
     public static final String NEW_REQUEST_PAGE = "new_request.jsp";
     public static final String ERROR_PAGE = "error.jsp";
     public static final String NEWITEM_PAGE = "admin/create_item.jsp";
+    public static final String CHECKREQUEST_PAGE = "check_request.jsp";
 
     private static Map<String, String> pages = new HashMap<>() {{
         put(UrlDispatcher.LOGIN_URL, LOGIN_PAGE);
@@ -23,6 +24,7 @@ public class JspDispatcher {
         put(UrlDispatcher.NEW_REQUEST_URL, NEW_REQUEST_PAGE);
         put(UrlDispatcher.ERROR_URL, ERROR_PAGE);
         put(UrlDispatcher.NEWITEM_URL, NEWITEM_PAGE);
+        put(UrlDispatcher.CHECKREQUEST_URL, CHECKREQUEST_PAGE);
     }};
 
     public static String getPage(String name) {

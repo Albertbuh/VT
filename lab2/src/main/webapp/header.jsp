@@ -6,7 +6,7 @@
         <div class="links-section">
             <a href="#">New trade </a>
             <a href="#">User list </a>
-            <a href="#">All items</a>
+            <a href="check_requests">Check requests</a>
         </div>
     </c:if>
     <c:if test="${user.role == 'USER'}">

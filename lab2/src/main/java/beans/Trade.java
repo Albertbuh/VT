@@ -15,7 +15,7 @@ public class Trade implements Serializable {
     public Trade() {
         requestInformation = null;
         admin = new User("admin","admin","ADMIN");
-        status = TradeStatus.AWAIT;
+        status = TradeStatus.WAITING;
     }
 
     public Trade(TradeRequest request, User admin, TradeStatus status, LocalDateTime date) {

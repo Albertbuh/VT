@@ -5,55 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8570d56-737a-470a-9940-65c9085e2334" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/!3038f546-448e-4fe5-8d3c-511832307229" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/!b6f95f78-56a7-40bc-8e6e-9f45ddc25592" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_16_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_codec_1_16_01.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/jstl_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jstl_1_21.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_1_01.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-Tahoma.png!afb5e779-e786-49c9-b6d6-0d33c8bcba61" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/0-Tahoma.png!e5c5163f-d270-4728-bd59-1ed8c6966506" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/beans/Lot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/beans/Trade.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/beans/TradeRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/beans/TradeStatus.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/beans/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CommandName.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CommandProvider.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/LoginCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/MakeRequestCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/SignInCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/ConnectionPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/ConnectionPoolFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/JDBCConnectionPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/DAOFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/TradeDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/SQLUserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/launch/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ClientService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/FileManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/ServiceFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/TokenService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/TradeService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/ClientServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/TokenServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Trade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/JspDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/JspDispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/UrlDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/UrlDispatcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckRequestsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CommandProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/launch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/launch/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/TradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/TradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/create_item.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/check_request.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check_request.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/JspDispatcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/UrlDispatcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/launch/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/launch/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005frequest_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/error_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/error_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +79,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "jakarta",
     "last_opened_file_path": "D:/Univer/vt/labs/lab2/src/main/webapp/WEB-INF/lib/jstl-1.2.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -139,21 +125,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQLTradeDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="tomcat" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dao.impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="dao.impl.SQLTradeDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SQLTradeDAOTest.getLotId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tomcat" />
       <extension name="coverage">
@@ -165,6 +136,22 @@
       <option name="PACKAGE_NAME" value="dao.impl" />
       <option name="MAIN_CLASS_NAME" value="dao.impl.SQLTradeDAOTest" />
       <option name="METHOD_NAME" value="getLotId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLTradeDAOTest.getRequests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dao.impl" />
+      <option name="MAIN_CLASS_NAME" value="dao.impl.SQLTradeDAOTest" />
+      <option name="METHOD_NAME" value="getRequests" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -205,10 +192,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.SQLTradeDAOTest.getRequests" />
         <item itemvalue="JUnit.SQLTradeDAOTest.getLotId" />
         <item itemvalue="JUnit.SQLTradeDAOTest.makeRequest" />
         <item itemvalue="JUnit.SQLTradeDAOTest.getUserId" />
-        <item itemvalue="JUnit.SQLTradeDAOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +218,8 @@
       <workItem from="1699644786408" duration="16000" />
       <workItem from="1699644810510" duration="227000" />
       <workItem from="1699645046616" duration="70000" />
-      <workItem from="1699645126703" duration="1177000" />
+      <workItem from="1699645126703" duration="2844000" />
+      <workItem from="1699788862931" duration="6301000" />
     </task>
     <servers />
   </component>

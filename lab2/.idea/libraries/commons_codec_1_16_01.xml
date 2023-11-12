@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="commons-codec-1.16.0">
+  <library name="commons-codec-1.16.01">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../../apacheCommon/commons-codec-1.16.0/commons-codec-1.16.0.jar!/" />
     </CLASSES>

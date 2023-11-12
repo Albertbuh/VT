@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="jstl-1.2">
+  <library name="jstl-1.21">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jstl-1.2.jar!/" />
     </CLASSES>
