@@ -8,6 +8,7 @@ import dao.DAOException;
 import dao.DAOFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import services.FileManager;
 import services.ServiceException;
 import services.TradeService;
 
@@ -61,14 +62,21 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public List<Trade> getTrades() throws ServiceException {
-//        List<Trade> result = null;
+        List<Trade> result = null;
         try {
-            return tradeDAO.getTrades();
+            result = tradeDAO.getTrades();
+            for (Trade trade : result) {
+                var lot = trade.getRequestInformation().getLot();
+                String filename = lot.getDescriptionPath();
+                String innerDesc = FileManager.readLotDescription(filename);
+                lot.setDescriptionPath(innerDesc);
+            }
         }
         catch(Exception e) {
             logger.error("getRequests: {}", e.getMessage());
             return null;
         }
+        return result;
     }
 
     @Override

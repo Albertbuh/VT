@@ -6,26 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a8570d56-737a-470a-9940-65c9085e2334" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/Trade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckTradesCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/CheckTradesCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/TradeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/TradeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/TradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/check_trades.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check_trades.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/impl/SQLTradeDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/beans/Trade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/beans/Trade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/CheckTradesCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/CheckTradesCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/TradeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/TradeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/TradeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TradeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/dao/impl/SQLTradeDAOTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/dao/impl/SQLTradeDAOTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005ftrades_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005ftrades_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005ftrades_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005ftrades_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +18,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -87,6 +70,7 @@
       <recent name="D:\Univer\vt\labs\lab2\src\main\webapp\WEB-INF" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="services" />
       <recent name="dao.impl" />
       <recent name="services.impl" />
       <recent name="dal" />
@@ -111,17 +95,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientServiceImplTest.adminSignIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FileManagerTest.readLotDescription" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tomcat" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="services.impl.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="services.impl" />
-      <option name="MAIN_CLASS_NAME" value="services.impl.ClientServiceImplTest" />
-      <option name="METHOD_NAME" value="adminSignIn" />
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.FileManagerTest" />
+      <option name="METHOD_NAME" value="readLotDescription" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -178,10 +162,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.FileManagerTest.readLotDescription" />
         <item itemvalue="JUnit.SQLTradeDAOTest.updateBid" />
         <item itemvalue="JUnit.SQLTradeDAOTest.getTrades" />
         <item itemvalue="JUnit.SQLTradeDAOTest.acceptRequest" />
-        <item itemvalue="JUnit.ClientServiceImplTest.adminSignIn" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +190,7 @@
       <workItem from="1699645046616" duration="70000" />
       <workItem from="1699645126703" duration="2844000" />
       <workItem from="1699788862931" duration="38533000" />
-      <workItem from="1699857054496" duration="303000" />
+      <workItem from="1699857054496" duration="1314000" />
     </task>
     <servers />
   </component>

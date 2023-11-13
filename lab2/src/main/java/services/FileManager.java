@@ -33,9 +33,26 @@ public class FileManager {
         return new File(fileName).getName();
     }
 
+   private static String readFile(String path) {
+        var sb = new StringBuilder();
+       try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+           String line;
+           while ((line = br.readLine()) != null) {
+               sb.append(line);
+           }
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+       return sb.toString();
+   }
+
+   public static String readLotDescription(String fileName) {
+        return readFile(Lot.defaultDescDir + fileName);
+   }
     public static String writeLotDescriptionToFile(String fileName, String text) throws ServiceException{
         return writeFile(Lot.defaultDescDir + fileName, text);
     }
+
 
     public static String uploadLotImageFromRequest(HttpServletRequest request, String partName) {
         String imageFileName = "";
