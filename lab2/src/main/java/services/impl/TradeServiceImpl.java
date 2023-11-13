@@ -13,6 +13,8 @@ import services.ServiceException;
 import services.TradeService;
 
 import java.sql.SQLException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class TradeServiceImpl implements TradeService {
@@ -37,8 +39,16 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public List<TradeRequest> getRequests() throws ServiceException{
+        List<TradeRequest> result = null;
         try {
-            return tradeDAO.getRequests();
+            result = tradeDAO.getRequests();
+            Collections.sort(result, new Comparator<TradeRequest>() {
+                @Override
+                public int compare(TradeRequest req1, TradeRequest req2) {
+                    return req1.getStatus().compareTo(req2.getStatus());
+                }
+            });
+            return result;
         }
         catch(Exception e) {
             logger.error("getRequests: {}", e.getMessage());
@@ -70,6 +80,8 @@ public class TradeServiceImpl implements TradeService {
                 String filename = lot.getDescriptionPath();
                 String innerDesc = FileManager.readLotDescription(filename);
                 lot.setDescriptionPath(innerDesc);
+
+                lot.setImageName(Lot.defaultImgDir + lot.getImageName());
             }
         }
         catch(Exception e) {

@@ -167,7 +167,7 @@ public class SQLTradeDAO implements TradeDAO {
         String sql = "SELECT `tr_lot_name`, `tr_lot_desc_path`, `tr_lot_img_path`, `tr_lot_price`, " +
                 "`tr_period`, `tr_filling_date`, `tr_status`, `u_login`, `tr_id` " +
                 "FROM trade_requests " +
-                "LEFT JOIN users on `u_id` = `tr_user_id`";
+                "LEFT JOIN users on `u_id` = `tr_user_id` ";
         Connection con = null;
         Statement st = null;
         ResultSet rs = null;
@@ -215,7 +215,9 @@ public class SQLTradeDAO implements TradeDAO {
         List<Trade> tradeList = new ArrayList<>();
         String sql = "SELECT `tr_lot_name`, `tr_lot_desc_path`, `tr_lot_img_path`, " +
                         "`t_max_bid`, `tr_period`, `t_status`, `t_start_date`, `t_id` " +
-                        "FROM trades LEFT JOIN trade_requests ON `t_request_id` = `tr_id`";
+                        "FROM trades LEFT JOIN trade_requests ON `t_request_id` = `tr_id` " +
+                        "WHERE `t_status` = 'IN_PROCESS' " +
+                        "ORDER BY `t_start_date`";
         Connection con = null;
         Statement st = null;
         ResultSet rs = null;

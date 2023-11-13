@@ -173,6 +173,7 @@
 
 <c:forEach var="trade" items="${tradeManager.trades}">
 <div class="trade-container">
+<%--    <img src="${trade.requestInformation.lot.imageName}" alt="">--%>
     <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
     <div class="desc-section">
         <h2><a href="#">${trade.requestInformation.lot.name}</a></h2>

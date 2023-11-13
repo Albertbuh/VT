@@ -1,5 +1,5 @@
 package beans;
 
 public enum TradeStatus {
-    WAITING, IN_PROCESS, FINISHED, ACCEPTED, REJECTED
+    WAITING, ACCEPTED, REJECTED, IN_PROCESS, FINISHED
 }
