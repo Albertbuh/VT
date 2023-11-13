@@ -73,7 +73,7 @@
             text-decoration: underline;
         }
 
-        .request-container {
+        .trade-container {
             display: grid;
             grid-template-columns: 150px 1fr 200px;
             align-items: center;
@@ -82,59 +82,58 @@
             position: relative;
             padding: 5px;
         }
-        .request-container:hover {
+        .trade-container:hover {
             border: 2px #012866 solid;
         }
-        .request-container p,
-        .request-container span,
-        .request-container h2{
+        .trade-container p,
+        .trade-container span,
+        .trade-container h2{
             padding: 0;
             margin: 0;
             margin-bottom: 5px;
         }
 
-        .request-container img {
+        .trade-container img {
             height: 100%;
             width: 100%;
             object-fit: cover;
         }
 
-        .request-container .desc-section {
+        .trade-container .desc-section {
             padding-left: 20px;
             height: 100%;
             vertical-align:top;
             position: relative;
         }
 
-        .request-container .desc-section a {
+        .trade-container .desc-section a {
             text-decoration: none;
             color: black;
         }
-        .request-container .desc-section a:hover {
+        .trade-container .desc-section a:hover {
             text-decoration: underline;
         }
 
-        .request-container .desc-section .by-user {
+        .trade-container .desc-section .by-user {
             color: #808080;
         }
-        .request-container .desc-section p {
+        .trade-container .desc-section p {
             font-size: 0.8em;
         }
-        .request-container .desc-section .price {
-            position: absolute;
-            bottom: 5%;
-            font-weight: bold;
-            font-size: 1.5em;
-        }
-
-        .request-container .button-section form{
+        .trade-container .bid-section {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+
+            font-size: 1.2em;
+            font-weight: bold;
         }
-        .request-container .button-section button {
+        .trade-container .bid-section .price {
+            outline: 2px #012866 solid;
+            padding: 6px;
+        }
+        .trade-container .bid-section button {
             width: 30%;
             background-color: #012866;
             color: white;
@@ -142,14 +141,15 @@
             padding: 10px;
             cursor: pointer;
             transition: opacity .15s;
+            margin: 5px;
         }
-        .request-container .button-section button:hover {
+        .trade-container .bid-section button:hover {
             opacity:50%;
         }
-        .request-container .button-section button:active {
+        .trade-container .bid-section button:active {
             opacity:90%;
         }
-        .request-container .button-section .date {
+        .trade-container .bid-section .date {
             position: absolute;
             top: 1vh;
             right: 1vh;
@@ -157,28 +157,41 @@
             color: #808080;
         }
 
-        .request-container h1 {
-            color: #012866;
-        }
-    </style>
+        .trade-container .button-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
 
+        }
+
+    </style>
 </head>
 <body>
 <c:import url="header.jsp"/>
 
+
 <c:forEach var="trade" items="${tradeManager.trades}">
-<div class="request-container">
+<div class="trade-container">
     <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
     <div class="desc-section">
         <h2><a href="#">${trade.requestInformation.lot.name}</a></h2>
         <p>${trade.requestInformation.lot.descriptionPath}</p>
-        <span class="price">
-            <fmt:formatNumber type="number" maxFractionDigits="2" value="${trade.maxBid}"/> BYN
-        </span>
+
         <span class="max-bid-user">${trade.maxBidUserLogin}</span>
     </div>
 
-    <div class="button-section">
+    <div class="bid-section">
+        <span class="price">
+            <fmt:formatNumber type="number" maxFractionDigits="2" value="${trade.maxBid}"/> BYN
+        </span>
+        <form class="button-container" method="post">
+            <input type="number" value="${trade.id}" name="tradeId" hidden>
+            <input type="number" value="10" name="bidUp" id="bidUp${trade.id}" hidden>
+            <button type="submit" onclick="document.getElementById('bidUp${trade.id}').value = 10">+10</button>
+            <button type="submit" onclick="document.getElementById('bidUp${trade.id}').value = 20">+20</button>
+            <button type="submit" onclick="document.getElementById('bidUp${trade.id}').value = 50">+50</button>
+        </form>
         <span class="date" id="date-field">published: ${trade.startDateTime}</span>
     </div>
 </div>

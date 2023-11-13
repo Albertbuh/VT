@@ -61,12 +61,24 @@ public class TradeServiceImpl implements TradeService {
 
     @Override
     public List<Trade> getTrades() throws ServiceException {
+//        List<Trade> result = null;
         try {
             return tradeDAO.getTrades();
         }
         catch(Exception e) {
             logger.error("getRequests: {}", e.getMessage());
             return null;
+        }
+    }
+
+    @Override
+    public void updateBid(int tradeId, double bidUp, String userLogin) {
+        try {
+            if(tradeId > 0 && bidUp > 0) {
+                tradeDAO.updateBid(tradeId, bidUp, userLogin);
+            }
+        } catch (DAOException e) {
+            logger.error(e.getMessage());
         }
     }
 }

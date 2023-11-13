@@ -13,6 +13,10 @@ public class Trade implements Serializable {
     private TradeStatus status;
     private BigDecimal maxBid;
     private String maxBidUserLogin;
+    private int id = 0;
+    public int getId() {
+        return this.id;
+    }
 
     public Trade() {
         requestInformation = null;
@@ -20,6 +24,14 @@ public class Trade implements Serializable {
     }
 
     public Trade(TradeRequest request, TradeStatus status, LocalDateTime date) {
+        this.requestInformation = request;
+        this.status = status;
+        this.startDateTime = date;
+        this.maxBid = request.getLot().getPrice();
+    }
+
+    public Trade(int id, TradeRequest request, TradeStatus status, LocalDateTime date) {
+        this.id = id;
         this.requestInformation = request;
         this.status = status;
         this.startDateTime = date;

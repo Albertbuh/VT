@@ -98,4 +98,10 @@ class SQLTradeDAOTest {
         }
         assertFalse(tradeList.isEmpty());
     }
+
+    @Test
+    void updateBid() {
+        dao.updateBid(21, 23.32, null);
+        assertTrue(true);
+    }
 }

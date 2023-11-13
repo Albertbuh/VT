@@ -17,7 +17,9 @@
         </div>
     </c:if>
     <div class="button-section">
-        <button class="btn-signin" onclick="location.href='./sign_in'">Sign In</button>
+        <button class="btn-signin" onclick="location.href='./sign_in'">
+            Sign In
+        </button>
         <button class="btn-login" onclick="location.href='./login'">Log In</button>
     </div>
 </nav>

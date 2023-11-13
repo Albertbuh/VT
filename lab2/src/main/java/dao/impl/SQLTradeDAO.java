@@ -8,6 +8,7 @@ import dao.TradeDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.math.BigDecimal;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -213,7 +214,7 @@ public class SQLTradeDAO implements TradeDAO {
     public List<Trade> getTrades() throws DAOException {
         List<Trade> tradeList = new ArrayList<>();
         String sql = "SELECT `tr_lot_name`, `tr_lot_desc_path`, `tr_lot_img_path`, " +
-                        "`t_max_bid`, `tr_period`, `t_status`, `t_start_date` " +
+                        "`t_max_bid`, `tr_period`, `t_status`, `t_start_date`, `t_id` " +
                         "FROM trades LEFT JOIN trade_requests ON `t_request_id` = `tr_id`";
         Connection con = null;
         Statement st = null;
@@ -231,8 +232,9 @@ public class SQLTradeDAO implements TradeDAO {
                 int period = rs.getInt(5);
                 TradeStatus status = TradeStatus.valueOf(rs.getString(6));
                 LocalDateTime startDate = rs.getTimestamp(7).toLocalDateTime();
+                int id = rs.getInt(8);
                 TradeRequest mockRequest = new TradeRequest(new User(), new Lot(lotName, lotDescPath, lotImgPath, lotMaxBid), period);
-                Trade trade = new Trade(mockRequest, status, startDate);
+                Trade trade = new Trade(id, mockRequest, status, startDate);
 
                 tradeList.add(trade);
             }
@@ -251,5 +253,30 @@ public class SQLTradeDAO implements TradeDAO {
         }
 
         return tradeList;
+    }
+
+    @Override
+    public void updateBid(int tradeId, double newBid, String userLogin) {
+        String sql = "UPDATE trades SET `t_max_bid` = `t_max_bid` + " + new BigDecimal(newBid) +
+                ", `t_max_bid_user_login` = \'" + userLogin + "\'" +
+                " WHERE `t_id` = " + tradeId ;
+        Connection con = null;
+        Statement st = null;
+        try {
+            con = connectionPool.getConnection();
+            st = con.createStatement();
+            st.executeUpdate(sql);
+            logger.info("Bid of trade {} updated successfully", tradeId);
+        } catch (SQLException e) {
+            logger.error("updateBid: {}", e.getMessage());
+        }
+        finally {
+            try {
+                if(con != null) {connectionPool.releaseConnection(con);}
+                if(st != null) {st.close();}
+            } catch (SQLException e) {
+                logger.error("updateBid: {}", e.getMessage());
+            }
+        }
     }
 }

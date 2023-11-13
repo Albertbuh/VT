@@ -15,4 +15,5 @@ public interface TradeDAO {
     void rejectRequest(int id) throws DAOException;
     List<TradeRequest> getRequests() throws DAOException;
     List<Trade> getTrades() throws DAOException;
+    void updateBid(int tradeId, double bidUp, String userLogin) throws DAOException;
 }
