@@ -17,9 +17,16 @@
         </div>
     </c:if>
     <div class="button-section">
-        <button class="btn-signin" onclick="location.href='./sign_in'">
-            Sign In
-        </button>
-        <button class="btn-login" onclick="location.href='./login'">Log In</button>
+        <c:if test="${sessionScope.get('token') == null}">
+            <button class="btn-signin" onclick="location.href='./sign_in'">
+                Sign In
+            </button>
+            <button class="btn-login" onclick="location.href='./login'">Log In</button>
+        </c:if>
+        <c:if test="${sessionScope.get('token') != null}">
+            <button class="btn-signin" onclick="location.href='./sign_in'">
+                Sign out
+            </button>
+        </c:if>
     </div>
 </nav>

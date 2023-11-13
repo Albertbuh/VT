@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8570d56-737a-470a-9940-65c9085e2334" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +189,7 @@
       <workItem from="1699645046616" duration="70000" />
       <workItem from="1699645126703" duration="2844000" />
       <workItem from="1699788862931" duration="38533000" />
-      <workItem from="1699857054496" duration="1314000" />
+      <workItem from="1699857054496" duration="1501000" />
     </task>
     <servers />
   </component>
