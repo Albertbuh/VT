@@ -33,6 +33,8 @@ public class Controller extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String path = request.getRequestURI().substring(1);
         String page = JspDispatcher.getPage(path);
+
+
         try {
             Command command = commandProvider.getCommand(path);
             logger.info("Start command of {} {}", path, command);
@@ -45,6 +47,7 @@ public class Controller extends HttpServlet {
         }
 
         logger.info("Loaded page: {}", page);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher(page);
         if(dispatcher != null)
             dispatcher.forward(request, response);

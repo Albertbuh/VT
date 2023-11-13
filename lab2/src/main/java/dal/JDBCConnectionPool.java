@@ -12,7 +12,7 @@ public class JDBCConnectionPool implements ConnectionPool {
     private String password;
     private List<Connection> connectionPool;
     private List<Connection> usedConnections = new ArrayList<>();
-    private static final int DEFAULT_POOL_SIZE = 10;
+    private static final int DEFAULT_POOL_SIZE = 20;
 
     public static JDBCConnectionPool create(String url, String user, String password)
             throws SQLException, ClassNotFoundException {
@@ -44,8 +44,11 @@ public class JDBCConnectionPool implements ConnectionPool {
     }
     @Override
     public Connection getConnection() {
-        Connection connection = connectionPool.remove(connectionPool.size() - 1);
-        usedConnections.add(connection);
+        Connection connection = null;
+        if(connectionPool.size() > 0) {
+            connection = connectionPool.remove(connectionPool.size() - 1);
+            usedConnections.add(connection);
+        }
         return connection;
     }
 

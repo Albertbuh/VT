@@ -41,6 +41,9 @@ public class MakeRequestCommand implements Command{
         } catch (ServiceException e) {
             CommandProvider.logger.error("MakeRequestCommand POST: {}", e.getMessage());
         }
+        catch (Exception e) {
+            return UrlDispatcher.NEW_REQUEST_URL;
+        }
 
         return UrlDispatcher.INDEX_URL;
     }

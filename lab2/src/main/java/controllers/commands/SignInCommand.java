@@ -32,7 +32,10 @@ public class SignInCommand implements Command{
                request.getSession().setAttribute("token",
                        serviceFactory.getTokenService().create(user));
 
-               page = UrlDispatcher.INDEX_URL;
+               if(user.getRole().equals("ADMIN"))
+                   page = UrlDispatcher.CHECKREQUEST_URL;
+               else
+                   page = UrlDispatcher.INDEX_URL;
            }
        } catch (ServiceException e) {
            CommandProvider.logger.error("SingInCommand POST: {}", e.getMessage());

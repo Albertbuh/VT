@@ -33,8 +33,8 @@ public class Main {
         WebResourceRoot resources = new StandardRoot(ctx);
         resources.addPreResources(new DirResourceSet(resources, "/WEB-INF/classes",
                 additionWebInfClasses.getAbsolutePath(), "/"));
+        resources.setCacheMaxSize(1024 * 1024); // Optional: Set the maximum cache size for resources
         ctx.setResources(resources);
-
 
         tomcat.start();
         tomcat.getServer().await();

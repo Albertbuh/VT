@@ -210,6 +210,26 @@ public class SQLTradeDAO implements TradeDAO {
         return resultList;
     }
 
+    private void updateTradeStatus(int id) {
+        String sql = "UPDATE `trades` SET `t_status` = 'FINISHED' WHERE `t_id` = " + id;
+        Connection con = null;
+        Statement st = null;
+        try {
+            con = connectionPool.getConnection();
+            st = con.createStatement();
+            st.executeUpdate(sql);
+        } catch (SQLException e) {
+            logger.error("updateTradeStatus: {}",e.getMessage());
+        }
+        finally {
+            try {
+                if(con != null) {connectionPool.releaseConnection(con);}
+                if(st != null) {st.close();}
+            } catch (SQLException e) {
+                logger.error("updateTradeStatus: {}", e.getMessage());
+            }
+        }
+    }
     @Override
     public List<Trade> getTrades() throws DAOException {
         List<Trade> tradeList = new ArrayList<>();
@@ -235,10 +255,17 @@ public class SQLTradeDAO implements TradeDAO {
                 TradeStatus status = TradeStatus.valueOf(rs.getString(6));
                 LocalDateTime startDate = rs.getTimestamp(7).toLocalDateTime();
                 int id = rs.getInt(8);
-                TradeRequest mockRequest = new TradeRequest(new User(), new Lot(lotName, lotDescPath, lotImgPath, lotMaxBid), period);
-                Trade trade = new Trade(id, mockRequest, status, startDate);
 
-                tradeList.add(trade);
+                LocalDateTime finishDate = startDate.plusDays(period);
+                if(LocalDateTime.now().isAfter(finishDate)) {
+                    updateTradeStatus(id);
+                } else {
+                    TradeRequest mockRequest = new TradeRequest(new User(), new Lot(lotName, lotDescPath, lotImgPath, lotMaxBid), period);
+                    Trade trade = new Trade(id, mockRequest, status, startDate);
+
+                    tradeList.add(trade);
+                }
+
             }
         }
         catch (SQLException e) {

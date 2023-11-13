@@ -6,15 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="a8570d56-737a-470a-9940-65c9085e2334" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/beans/TradeStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/beans/TradeStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/MakeRequestCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/MakeRequestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/commands/SignInCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/commands/SignInCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dal/JDBCConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dal/JDBCConnectionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/SQLTradeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/impl/TradeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/check_trades.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/check_trades.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/launch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/launch/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/new_request.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/new_request.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controllers/commands/SignInCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controllers/commands/SignInCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/JDBCConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/JDBCConnectionPool.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/SQLTradeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/impl/TradeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005ftrades_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005ftrades_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005ftrades_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/check_005ftrades_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/header_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/launch/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/launch/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/index_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/new_005frequest_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/new_005frequest_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/new_005frequest_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tomcat.3000/work/Tomcat/localhost/ROOT/org/apache/jsp/new_005frequest_jsp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +205,8 @@
       <workItem from="1699645046616" duration="70000" />
       <workItem from="1699645126703" duration="2844000" />
       <workItem from="1699788862931" duration="38533000" />
-      <workItem from="1699857054496" duration="3024000" />
+      <workItem from="1699857054496" duration="7617000" />
+      <workItem from="1699867994287" duration="1315000" />
     </task>
     <servers />
   </component>
