@@ -49,8 +49,8 @@ public class SQLTradeDAO implements TradeDAO {
         }
         finally {
             try {
-                if(st != null) {st.close(); }
                 if(rs != null) {rs.close(); }
+                if(st != null) {st.close(); }
             } catch (SQLException e) {
                 logger.error("unable to clear resources in getObjectId: {}", e.getMessage());
             }
@@ -131,9 +131,9 @@ public class SQLTradeDAO implements TradeDAO {
         }
         finally {
             try {
-                if(con != null) {connectionPool.releaseConnection(con); }
-                if(stUpdate != null) { stUpdate.close();}
                 if(ps != null) {ps.close();}
+                if(stUpdate != null) { stUpdate.close();}
+                if(con != null) {connectionPool.releaseConnection(con); }
             } catch (SQLException e) {
                 logger.error("acceptRequest: {}", e.getMessage());
             }
@@ -200,9 +200,9 @@ public class SQLTradeDAO implements TradeDAO {
         }
         finally {
             try {
-                if(con != null) { connectionPool.releaseConnection(con);}
-                if(st != null) {st.close();}
                 if(rs != null) {rs.close();}
+                if(st != null) {st.close();}
+                if(con != null) { connectionPool.releaseConnection(con);}
             } catch (SQLException e) {
                 logger.error("getRequests: {}", e.getMessage());
             }
@@ -223,8 +223,8 @@ public class SQLTradeDAO implements TradeDAO {
         }
         finally {
             try {
-                if(con != null) {connectionPool.releaseConnection(con);}
                 if(st != null) {st.close();}
+                if(con != null) {connectionPool.releaseConnection(con);}
             } catch (SQLException e) {
                 logger.error("updateTradeStatus: {}", e.getMessage());
             }
@@ -273,9 +273,9 @@ public class SQLTradeDAO implements TradeDAO {
         }
         finally {
             try {
-                if(con != null) { connectionPool.releaseConnection(con); }
+//                if(rs != null) {rs.close();}
                 if(st != null) {st.close();}
-                if(rs != null) {rs.close();}
+                if(con != null) { connectionPool.releaseConnection(con); }
             } catch (SQLException e) {
                 logger.error("getTrades: {}", e.getMessage());
             }
@@ -301,8 +301,8 @@ public class SQLTradeDAO implements TradeDAO {
         }
         finally {
             try {
-                if(con != null) {connectionPool.releaseConnection(con);}
                 if(st != null) {st.close();}
+                if(con != null) {connectionPool.releaseConnection(con);}
             } catch (SQLException e) {
                 logger.error("updateBid: {}", e.getMessage());
             }

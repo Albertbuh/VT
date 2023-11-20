@@ -33,7 +33,7 @@ public class Controller extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String path = request.getRequestURI().substring(1);
         String page = JspDispatcher.getPage(path);
-
+        System.out.println(page);
 
         try {
             Command command = commandProvider.getCommand(path);

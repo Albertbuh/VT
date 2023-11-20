@@ -82,7 +82,4 @@ public class FileManager {
         return imageFileName;
     }
 
-
-
-
 }

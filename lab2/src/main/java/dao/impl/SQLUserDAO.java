@@ -75,7 +75,7 @@ public class SQLUserDAO implements UserDAO {
         }
         finally {
             try {
-                if(rs != null) { rs.close(); }
+//                if(rs != null) { rs.close(); }
                 if(ps != null) {ps.close(); }
                 if(conn != null) { connectionPool.releaseConnection(conn); }
             }
